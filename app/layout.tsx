@@ -16,8 +16,13 @@ const bodyFont = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Capital V Solutions | Enterprise Technology Consulting",
+  title: "Capital V Solutions",
   description: "Build a technology backbone that actually powers your business. Capital V Solutions helps enterprises design and implement robust platforms, intelligent data foundations, and AI-driven automation.",
+  icons: {
+    icon: "/logo.png.PNG",
+    shortcut: "/logo.png.PNG",
+    apple: "/logo.png.PNG",
+  },
 };
 
 export default function RootLayout({

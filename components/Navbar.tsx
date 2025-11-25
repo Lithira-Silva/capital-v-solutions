@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -64,9 +65,19 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl md:text-2xl font-heading font-semibold tracking-tight text-brand-text-dark dark:text-brand-text-light">
-              Capital <span className="text-[var(--color-gold)]">V</span> Solutions
+          <Link href="/" className="flex items-center gap-2 group">
+            <span className="text-xl md:text-2xl font-heading font-semibold tracking-tight text-brand-text-dark dark:text-brand-text-light flex items-center gap-1">
+              Capital{" "}
+              <span className="relative inline-flex items-center justify-center w-8 h-8 transition-transform group-hover:scale-110">
+                <Image
+                  src="/logo.png.PNG"
+                  alt="V"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </span>{" "}
+              Solutions
             </span>
           </Link>
 
