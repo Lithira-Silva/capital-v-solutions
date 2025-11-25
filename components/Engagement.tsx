@@ -1,22 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Search, Pencil, Rocket } from "lucide-react";
 
 const steps = [
   {
     number: "01",
     title: "Discover & Diagnose",
     description: "Understand business goals, current systems, and constraints.",
+    icon: Search,
   },
   {
     number: "02",
     title: "Design & Architect",
     description: "Propose a modern blueprint for platforms, data, and automation.",
+    icon: Pencil,
   },
   {
     number: "03",
     title: "Build, Integrate & Scale",
     description: "Implement solutions, integrate systems, and iterate for growth.",
+    icon: Rocket,
   },
 ];
 
@@ -46,8 +50,9 @@ export function Engagement() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="relative flex flex-col items-center text-center"
             >
-              <div className="w-32 h-32 rounded-full bg-brand-dark border-2 border-[var(--color-gold)]/30 flex items-center justify-center mb-8 relative z-10 shadow-[0_0_30px_rgba(212,175,55,0.15)]">
-                <span className="font-heading text-3xl font-semibold text-[var(--color-gold)]">
+              <div className="w-32 h-32 rounded-full bg-brand-dark border-2 border-[var(--color-gold)]/30 flex flex-col items-center justify-center mb-8 relative z-10 shadow-[0_0_30px_rgba(212,175,55,0.15)] gap-2">
+                <step.icon className="w-8 h-8 text-[var(--color-gold)]" />
+                <span className="font-heading text-lg font-semibold text-[var(--color-gold)]">
                   {step.number}
                 </span>
               </div>

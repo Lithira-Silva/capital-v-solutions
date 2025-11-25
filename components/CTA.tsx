@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/ContactForm";
+import { Calendar, MessageCircle } from "lucide-react";
 
 export function CTA() {
   return (
@@ -26,10 +27,12 @@ export function CTA() {
               initiative.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="brand" size="lg" className="font-body rounded-full bg-[var(--color-red)] px-8 py-3 text-white hover:bg-[var(--color-red-dark)] shadow-lg shadow-[rgba(178,34,34,0.4)] hover:-translate-y-0.5 transition-all">
+              <Button variant="brand" size="lg" className="font-body rounded-full bg-[var(--color-red)] px-8 py-3 text-white hover:bg-[var(--color-red-dark)] shadow-lg shadow-[rgba(178,34,34,0.4)] hover:-translate-y-0.5 transition-all flex items-center gap-2">
+                <Calendar className="w-4 h-4" />
                 Schedule a Discovery Call
               </Button>
-              <Button variant="outline" size="lg" className="font-body rounded-full border border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white px-8 py-3 hover:-translate-y-0.5 transition-all">
+              <Button variant="outline" size="lg" className="font-body rounded-full border border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white px-8 py-3 hover:-translate-y-0.5 transition-all flex items-center gap-2">
+                <MessageCircle className="w-4 h-4" />
                 Contact Us
               </Button>
             </div>

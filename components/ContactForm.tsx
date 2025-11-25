@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { User, Building2, Mail, MessageSquare, Send } from "lucide-react";
 
 type FormData = {
   name: string;
@@ -30,7 +31,8 @@ export function ContactForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="grid grid-cols-2 gap-4">
         <div className="space-y-2">
-          <label htmlFor="name" className="font-body text-sm font-medium text-brand-text-light">
+          <label htmlFor="name" className="font-body text-sm font-medium text-brand-text-light flex items-center gap-2">
+            <User className="w-4 h-4 text-[var(--color-gold)]" />
             Name
           </label>
           <Input
@@ -44,7 +46,8 @@ export function ContactForm() {
           )}
         </div>
         <div className="space-y-2">
-          <label htmlFor="company" className="font-body text-sm font-medium text-brand-text-light">
+          <label htmlFor="company" className="font-body text-sm font-medium text-brand-text-light flex items-center gap-2">
+            <Building2 className="w-4 h-4 text-[var(--color-gold)]" />
             Company
           </label>
           <Input
@@ -60,7 +63,8 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="email" className="font-body text-sm font-medium text-brand-text-light">
+        <label htmlFor="email" className="font-body text-sm font-medium text-brand-text-light flex items-center gap-2">
+          <Mail className="w-4 h-4 text-[var(--color-gold)]" />
           Email
         </label>
         <Input
@@ -82,7 +86,8 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="message" className="font-body text-sm font-medium text-brand-text-light">
+        <label htmlFor="message" className="font-body text-sm font-medium text-brand-text-light flex items-center gap-2">
+          <MessageSquare className="w-4 h-4 text-[var(--color-gold)]" />
           Message
         </label>
         <Textarea
@@ -99,10 +104,15 @@ export function ContactForm() {
       <Button
         type="submit"
         variant="brand"
-        className="font-body w-full mt-4 rounded-full bg-[var(--color-red)] px-8 py-3 text-white hover:bg-[var(--color-red-dark)] shadow-lg shadow-[rgba(178,34,34,0.4)] hover:-translate-y-0.5 transition-all"
+        className="font-body w-full mt-4 rounded-full bg-[var(--color-red)] px-8 py-3 text-white hover:bg-[var(--color-red-dark)] shadow-lg shadow-[rgba(178,34,34,0.4)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
         disabled={isSubmitting}
       >
-        {isSubmitting ? "Sending..." : "Send Message"}
+        {isSubmitting ? "Sending..." : (
+          <>
+            <Send className="w-4 h-4" />
+            Send Message
+          </>
+        )}
       </Button>
     </form>
   );

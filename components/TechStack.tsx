@@ -1,12 +1,14 @@
 "use client";
 
+import { Cloud, Database, Brain, Plug, Workflow } from "lucide-react";
+
 export function TechStack() {
   const categories = [
-    "Cloud & Platforms",
-    "Data & Analytics",
-    "AI & Machine Learning",
-    "Integration & APIs",
-    "Automation & Orchestration",
+    { name: "Cloud & Platforms", icon: Cloud },
+    { name: "Data & Analytics", icon: Database },
+    { name: "AI & Machine Learning", icon: Brain },
+    { name: "Integration & APIs", icon: Plug },
+    { name: "Automation & Orchestration", icon: Workflow },
   ];
 
   return (
@@ -23,9 +25,10 @@ export function TechStack() {
           {categories.map((tech, index) => (
             <div
               key={index}
-              className="font-body px-6 py-3 rounded-full bg-white dark:bg-white/5 border border-[var(--color-gold)]/20 text-brand-text-dark dark:text-brand-text-light font-medium shadow-sm hover:border-[var(--color-gold)]/50 hover:-translate-y-0.5 transition-all cursor-default"
+              className="font-body px-6 py-3 rounded-full bg-white dark:bg-white/5 border border-[var(--color-gold)]/20 text-brand-text-dark dark:text-brand-text-light font-medium shadow-sm hover:border-[var(--color-gold)]/50 hover:-translate-y-0.5 transition-all cursor-default flex items-center gap-2"
             >
-              {tech}
+              <tech.icon className="w-4 h-4 text-[var(--color-gold)]" />
+              {tech.name}
             </div>
           ))}
         </div>

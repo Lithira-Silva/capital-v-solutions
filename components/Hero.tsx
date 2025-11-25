@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Sparkles, Zap, TrendingUp } from "lucide-react";
+import { ArrowRight, Sparkles, Zap, TrendingUp, Cloud, Brain, BarChart, Activity, Plug } from "lucide-react";
 import { useRef } from "react";
 
 export function Hero() {
@@ -196,11 +196,7 @@ export function Hero() {
               whileHover={{ borderColor: "rgba(212, 175, 55, 0.5)" }}
             >
               <div className="flex items-center gap-3">
-                <motion.div 
-                  className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[var(--color-gold)] to-[#E5C158] shadow-lg shadow-[var(--color-gold)]/50"
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                />
+                <Cloud className="w-4 h-4 text-[var(--color-gold)]" />
                 <span className="text-sm text-white/95 font-medium tracking-wide">Azure Cloud</span>
               </div>
             </motion.div>
@@ -219,11 +215,7 @@ export function Hero() {
               whileHover={{ borderColor: "rgba(178, 34, 34, 0.5)" }}
             >
               <div className="flex items-center gap-3">
-                <motion.div 
-                  className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[var(--color-red)] to-[#D32F2F] shadow-lg shadow-[var(--color-red)]/50"
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 2.2, repeat: Infinity }}
-                />
+                <Brain className="w-4 h-4 text-[var(--color-red)]" />
                 <span className="text-sm text-white/95 font-medium tracking-wide">AI/ML Models</span>
               </div>
             </motion.div>
@@ -242,11 +234,7 @@ export function Hero() {
               whileHover={{ borderColor: "rgba(212, 175, 55, 0.35)" }}
             >
               <div className="flex items-center gap-3">
-                <motion.div 
-                  className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-white/80 to-white/60 shadow-lg shadow-white/30"
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 1.8, repeat: Infinity }}
-                />
+                <BarChart className="w-4 h-4 text-[var(--color-gold)]" />
                 <span className="text-sm text-white/95 font-medium tracking-wide">Data Analytics</span>
               </div>
             </motion.div>
@@ -265,11 +253,7 @@ export function Hero() {
               whileHover={{ borderColor: "rgba(212, 175, 55, 0.5)" }}
             >
               <div className="flex items-center gap-3">
-                <motion.div 
-                  className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[var(--color-gold)] to-[#E5C158] shadow-lg shadow-[var(--color-gold)]/50"
-                  animate={{ scale: [1, 1.3, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                />
+                <Activity className="w-4 h-4 text-[var(--color-gold)]" />
                 <span className="text-sm text-white/95 font-medium tracking-wide">99.9% Uptime</span>
               </div>
             </motion.div>
@@ -289,11 +273,7 @@ export function Hero() {
             >
               <div className="flex items-center gap-3">
                 <span className="text-sm text-white/95 font-medium tracking-wide">API Integration</span>
-                <motion.div 
-                  className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[var(--color-red)] to-[#D32F2F] shadow-lg shadow-[var(--color-red)]/50"
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 2.4, repeat: Infinity }}
-                />
+                <Plug className="w-4 h-4 text-[var(--color-red)]" />
               </div>
             </motion.div>
           </motion.div>

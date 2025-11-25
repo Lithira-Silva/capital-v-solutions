@@ -1,3 +1,5 @@
+import { Linkedin, Shield, FileText } from "lucide-react";
+
 export function Footer() {
   return (
     <footer className="bg-[#050509] border-t border-white/10 py-12">
@@ -12,13 +14,16 @@ export function Footer() {
             </p>
           </div>
           <div className="flex gap-8">
-            <a href="#" className="font-body text-sm text-[var(--color-text-muted)] hover:text-[var(--color-gold)] transition-colors">
+            <a href="#" className="font-body text-sm text-[var(--color-text-muted)] hover:text-[var(--color-gold)] transition-colors flex items-center gap-2">
+              <Shield className="w-4 h-4" />
               Privacy Policy
             </a>
-            <a href="#" className="font-body text-sm text-[var(--color-text-muted)] hover:text-[var(--color-gold)] transition-colors">
+            <a href="#" className="font-body text-sm text-[var(--color-text-muted)] hover:text-[var(--color-gold)] transition-colors flex items-center gap-2">
+              <FileText className="w-4 h-4" />
               Terms of Service
             </a>
-            <a href="#" className="font-body text-sm text-[var(--color-text-muted)] hover:text-[var(--color-gold)] transition-colors">
+            <a href="#" className="font-body text-sm text-[var(--color-text-muted)] hover:text-[var(--color-gold)] transition-colors flex items-center gap-2">
+              <Linkedin className="w-4 h-4" />
               LinkedIn
             </a>
           </div>
