@@ -42,58 +42,118 @@ const pillars = [
 
 export function Pillars() {
   return (
-    <section id="pillars" className="py-20 md:py-28 bg-brand-dark relative overflow-hidden">
-      {/* Subtle background accent */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[var(--color-gold)]/5 rounded-full blur-[120px]" />
+    <section id="pillars" className="min-h-screen flex items-center py-20 md:py-24 bg-gradient-to-b from-[#FAF9F6] via-[#F5F3ED] to-[#FAF9F6] relative overflow-hidden">
+      {/* Premium Background Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Primary gradient orb */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-[#D4AF37]/8 via-[#D4AF37]/4 to-transparent rounded-full blur-3xl" />
+        {/* Secondary accent orb */}
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tl from-[#B22222]/5 via-[#B22222]/2 to-transparent rounded-full blur-3xl" />
+        {/* Subtle grid pattern overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(15,15,15,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(15,15,15,0.02)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <p className="font-body text-[11px] uppercase tracking-[0.18em] text-[var(--color-gold)] mb-4 font-semibold">
-            Our Foundation
-          </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6">
+      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10 w-full">
+        {/* Section Header - Enhanced */}
+        <div className="text-center mb-12 md:mb-16 space-y-4 max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-3 px-5 py-2 rounded-full border-2 border-[#D4AF37]/40 bg-gradient-to-r from-[#FFFEF9]/90 to-[#FFF9F0]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(212,175,55,0.1)]"
+          >
+            <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#C9A032] animate-pulse" />
+            <span className="font-body text-[11px] font-semibold tracking-[0.25em] text-[#0F0F0F]/70 uppercase">
+              Our Foundation
+            </span>
+          </motion.div>
+          
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[-0.03em] text-[#0F0F0F] leading-[1.05]"
+          >
             Our Pillars
-          </h2>
-          <p className="font-body text-lg text-[var(--color-text-muted)] max-w-2xl mx-auto leading-relaxed">
+          </motion.h2>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="font-body text-lg md:text-xl text-[#0F0F0F]/65 max-w-3xl mx-auto leading-[1.7] font-light"
+          >
             We focus on the three critical layers of modern enterprise technology.
-          </p>
+          </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Premium Cards Grid */}
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {pillars.map((pillar, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.7, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
+              className="group"
             >
-              <Card className="relative rounded-2xl border border-white/5 bg-white/5 p-8 md:p-10 backdrop-blur-sm transition-all hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(0,0,0,0.45)] h-full group">
-                <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-[var(--color-gold-dark)] via-[var(--color-gold)] to-[var(--color-gold-dark)] opacity-0 group-hover:opacity-100 transition-opacity" />
-                <CardHeader className="p-0 mb-6">
-                  <div className="w-14 h-14 rounded-full bg-[var(--color-gold)]/10 flex items-center justify-center mb-6 group-hover:bg-[var(--color-gold)]/20 transition-colors">
-                    <pillar.icon className="h-6 w-6 text-[var(--color-gold)]" />
-                  </div>
-                  <CardTitle className="font-heading text-2xl font-semibold text-white mb-3">
-                    {pillar.title}
-                  </CardTitle>
-                  <p className="font-body text-[var(--color-text-muted)] text-sm leading-relaxed">
-                    {pillar.description}
-                  </p>
-                </CardHeader>
-                <CardContent className="p-0">
-                  <ul className="space-y-3">
-                    {pillar.bullets.map((bullet, i) => (
-                      <li key={i} className="flex items-center gap-2 font-body text-sm text-gray-400">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-red)]" />
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <div className="relative h-full bg-gradient-to-b from-white to-[#FAFAFA] border-2 border-[#0F0F0F]/8 rounded-3xl p-6 lg:p-8 transition-all duration-500 hover:border-[#D4AF37]/40 hover:shadow-[0_24px_80px_rgba(0,0,0,0.12),0_0_0_1px_rgba(212,175,55,0.1)] hover:-translate-y-2 backdrop-blur-sm">
+                {/* Decorative corner accent */}
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#D4AF37]/5 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Icon Container - Premium */}
+                <div className="relative w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-[#0F0F0F] to-[#2A2A2A] flex items-center justify-center mb-6 shadow-[0_8px_32px_rgba(15,15,15,0.2)] group-hover:shadow-[0_12px_40px_rgba(212,175,55,0.4)] group-hover:scale-110 transition-all duration-500 group-hover:bg-gradient-to-br group-hover:from-[#D4AF37] group-hover:to-[#C9A032]">
+                  <pillar.icon className="h-6 w-6 lg:h-7 lg:w-7 text-white relative z-10" />
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#D4AF37]/0 to-[#D4AF37]/0 group-hover:from-[#D4AF37]/20 group-hover:to-[#C9A032]/20 blur-xl transition-all duration-500" />
+                </div>
+
+                {/* Title - Enhanced Typography */}
+                <h3 className="font-heading text-2xl lg:text-3xl font-bold tracking-[-0.02em] text-[#0F0F0F] mb-3 leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#0F0F0F] group-hover:to-[#0F0F0F]/70 transition-all duration-500">
+                  {pillar.title}
+                </h3>
+
+                {/* Description - Premium Typography */}
+                <p className="font-body text-sm lg:text-base text-[#0F0F0F]/65 leading-[1.7] mb-6 font-light">
+                  {pillar.description}
+                </p>
+
+                {/* Bullets - Enhanced with Premium Styling */}
+                <div className="space-y-2.5 lg:space-y-3">
+                  {pillar.bullets.map((bullet, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.15 + i * 0.1 }}
+                      className="flex items-start gap-3 font-body text-sm lg:text-base text-[#0F0F0F]/60 group/item"
+                    >
+                      <div className="relative flex-shrink-0 mt-1.5">
+                        {/* Premium bullet point */}
+                        <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#C9A032] shadow-[0_0_8px_rgba(212,175,55,0.5)]" />
+                        {/* Hover glow */}
+                        <div className="absolute inset-0 w-1.5 h-1.5 rounded-full bg-[#D4AF37] opacity-0 group-hover/item:opacity-50 blur-sm transition-opacity" />
+                      </div>
+                      <span className="flex-1 group-hover/item:text-[#0F0F0F]/80 transition-colors">{bullet}</span>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Premium accent line with gradient */}
+                <div className="absolute bottom-0 left-6 right-6 lg:left-8 lg:right-8 h-[2px] bg-gradient-to-r from-transparent via-[#D4AF37]/30 to-transparent group-hover:via-[#D4AF37]/60 transition-all duration-500">
+                  <div className="h-full w-1/3 bg-gradient-to-r from-[#D4AF37] to-transparent animate-shimmer" />
+                </div>
+
+                {/* Card number indicator */}
+                <div className="absolute top-6 right-6 font-heading text-6xl font-bold text-[#0F0F0F]/[0.15] group-hover:text-[#D4AF37]/[0.25] transition-all duration-500 select-none">
+                  {String(index + 1).padStart(2, '0')}
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
