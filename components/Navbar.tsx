@@ -9,21 +9,47 @@ import { cn } from "@/lib/utils";
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+
+      // Detect active section
+      const sections = ["pillars", "approach", "tech", "contact"];
+      const scrollPosition = window.scrollY + 100;
+
+      // Check if at top of page
+      if (window.scrollY < 100) {
+        setActiveSection("");
+        return;
+      }
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(sectionId);
+            return;
+          }
+        }
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Call once on mount
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "Services", href: "#pillars" },
-    { name: "Our Approach", href: "#approach" },
-    { name: "Technology", href: "#tech" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "#", id: "" },
+    { name: "Services", href: "#pillars", id: "pillars" },
+    { name: "Our Approach", href: "#approach", id: "approach" },
+    { name: "Technology", href: "#tech", id: "tech" },
+    { name: "Contact", href: "#contact", id: "contact" },
   ];
 
   return (
@@ -50,9 +76,17 @@ export function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="font-body text-sm font-medium text-brand-text-dark/80 dark:text-brand-text-light/80 hover:text-[var(--color-red)] transition-colors cursor-pointer"
+                className={cn(
+                  "font-body text-sm font-medium transition-all cursor-pointer relative group",
+                  activeSection === link.id
+                    ? "text-[var(--color-gold)]"
+                    : "text-brand-text-dark/80 dark:text-brand-text-light/80 hover:text-[var(--color-red)]"
+                )}
               >
                 {link.name}
+                {activeSection === link.id && (
+                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[var(--color-gold)] rounded-full shadow-sm shadow-[var(--color-gold)]/50" />
+                )}
               </a>
             ))}
             <Button variant="brand" className="rounded-full px-6 py-2.5 shadow-lg shadow-[rgba(178,34,34,0.3)] hover:-translate-y-0.5 transition-all">Let&apos;s Build Your Solution</Button>
@@ -76,10 +110,18 @@ export function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-base font-medium text-brand-text-dark dark:text-brand-text-light hover:text-brand-red py-2 cursor-pointer"
+                className={cn(
+                  "text-base font-medium py-2 cursor-pointer transition-colors relative",
+                  activeSection === link.id
+                    ? "text-[var(--color-gold)]"
+                    : "text-brand-text-dark dark:text-brand-text-light hover:text-brand-red"
+                )}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
+                {activeSection === link.id && (
+                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-[var(--color-gold)] rounded-full shadow-sm shadow-[var(--color-gold)]/50" />
+                )}
               </a>
             ))}
             <Button variant="brand" className="w-full">
