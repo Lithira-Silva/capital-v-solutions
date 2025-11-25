@@ -182,97 +182,118 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Floating tech badges */}
+          {/* Floating tech badges - premium glassmorphism design */}
           <motion.div
-            className="absolute top-20 right-[10%] hidden lg:block"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
+            className="absolute top-24 right-[5%] hidden lg:block"
+            initial={{ opacity: 0, x: 30, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 1, type: "spring", stiffness: 100 }}
           >
             <motion.div
-              className="px-4 py-2 rounded-lg bg-white/5 border border-[var(--color-gold)]/20 backdrop-blur-md"
+              className="group px-5 py-3 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-[var(--color-gold)]/30 backdrop-blur-xl shadow-2xl hover:shadow-[var(--color-gold)]/20 transition-all duration-300 hover:scale-105"
               animate={{ y: [0, -12, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              whileHover={{ borderColor: "rgba(212, 175, 55, 0.5)" }}
             >
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-[var(--color-gold)]" />
-                <span className="text-xs text-white/90 font-mono">Azure Cloud</span>
+              <div className="flex items-center gap-3">
+                <motion.div 
+                  className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[var(--color-gold)] to-[#E5C158] shadow-lg shadow-[var(--color-gold)]/50"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+                <span className="text-sm text-white/95 font-medium tracking-wide">Azure Cloud</span>
               </div>
             </motion.div>
           </motion.div>
 
           <motion.div
-            className="absolute top-40 left-[5%] hidden lg:block"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
+            className="absolute top-44 right-[12%] hidden lg:block"
+            initial={{ opacity: 0, x: 30, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 1.2, type: "spring", stiffness: 100 }}
           >
             <motion.div
-              className="px-4 py-2 rounded-lg bg-white/5 border border-[var(--color-red)]/20 backdrop-blur-md"
+              className="group px-5 py-3 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-[var(--color-red)]/30 backdrop-blur-xl shadow-2xl hover:shadow-[var(--color-red)]/20 transition-all duration-300 hover:scale-105"
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              whileHover={{ borderColor: "rgba(178, 34, 34, 0.5)" }}
             >
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-[var(--color-red)]" />
-                <span className="text-xs text-white/90 font-mono">AI/ML Models</span>
+              <div className="flex items-center gap-3">
+                <motion.div 
+                  className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[var(--color-red)] to-[#D32F2F] shadow-lg shadow-[var(--color-red)]/50"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2.2, repeat: Infinity }}
+                />
+                <span className="text-sm text-white/95 font-medium tracking-wide">AI/ML Models</span>
               </div>
             </motion.div>
           </motion.div>
 
           <motion.div
-            className="absolute bottom-32 right-[12%] hidden lg:block"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.4 }}
+            className="absolute top-64 right-[7%] hidden lg:block"
+            initial={{ opacity: 0, x: 30, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 1.4, type: "spring", stiffness: 100 }}
           >
             <motion.div
-              className="px-4 py-2 rounded-lg bg-white/5 border border-white/20 backdrop-blur-md"
+              className="group px-5 py-3 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-[var(--color-gold)]/20 backdrop-blur-xl shadow-2xl hover:shadow-[var(--color-gold)]/10 transition-all duration-300 hover:scale-105"
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              whileHover={{ borderColor: "rgba(212, 175, 55, 0.35)" }}
             >
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-white/60" />
-                <span className="text-xs text-white/90 font-mono">Data Analytics</span>
+              <div className="flex items-center gap-3">
+                <motion.div 
+                  className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-white/80 to-white/60 shadow-lg shadow-white/30"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 1.8, repeat: Infinity }}
+                />
+                <span className="text-sm text-white/95 font-medium tracking-wide">Data Analytics</span>
               </div>
             </motion.div>
           </motion.div>
 
           <motion.div
-            className="absolute top-60 right-[5%] hidden xl:block"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 1.6 }}
+            className="absolute top-[340px] right-[15%] hidden xl:block"
+            initial={{ opacity: 0, x: 30, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 1.6, type: "spring", stiffness: 100 }}
           >
             <motion.div
-              className="px-4 py-2 rounded-lg bg-white/5 border border-[var(--color-gold)]/20 backdrop-blur-md"
-              animate={{ x: [0, 10, 0] }}
+              className="group px-5 py-3 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-[var(--color-gold)]/30 backdrop-blur-xl shadow-2xl hover:shadow-[var(--color-gold)]/20 transition-all duration-300 hover:scale-105"
+              animate={{ y: [0, 10, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              whileHover={{ borderColor: "rgba(212, 175, 55, 0.5)" }}
             >
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3">
                 <motion.div 
-                  className="w-2 h-2 rounded-full bg-[#10B981]"
+                  className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[var(--color-gold)] to-[#E5C158] shadow-lg shadow-[var(--color-gold)]/50"
                   animate={{ scale: [1, 1.3, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
-                <span className="text-xs text-white/90 font-mono">99.9% Uptime</span>
+                <span className="text-sm text-white/95 font-medium tracking-wide">99.9% Uptime</span>
               </div>
             </motion.div>
           </motion.div>
 
           <motion.div
-            className="absolute bottom-48 left-[8%] hidden xl:block"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 1.8 }}
+            className="absolute top-[420px] right-[9%] hidden xl:block"
+            initial={{ opacity: 0, x: 30, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 1.8, type: "spring", stiffness: 100 }}
           >
             <motion.div
-              className="px-4 py-2 rounded-lg bg-white/5 border border-[var(--color-red)]/20 backdrop-blur-md"
-              animate={{ x: [0, -8, 0] }}
+              className="group px-5 py-3 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-[var(--color-red)]/30 backdrop-blur-xl shadow-2xl hover:shadow-[var(--color-red)]/20 transition-all duration-300 hover:scale-105"
+              animate={{ y: [0, 8, 0] }}
               transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+              whileHover={{ borderColor: "rgba(178, 34, 34, 0.5)" }}
             >
-              <div className="flex items-center gap-2">
-                <span className="text-xs text-white/90 font-mono">API Integration</span>
-                <div className="w-2 h-2 rounded-full bg-[var(--color-red)]" />
+              <div className="flex items-center gap-3">
+                <span className="text-sm text-white/95 font-medium tracking-wide">API Integration</span>
+                <motion.div 
+                  className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[var(--color-red)] to-[#D32F2F] shadow-lg shadow-[var(--color-red)]/50"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2.4, repeat: Infinity }}
+                />
               </div>
             </motion.div>
           </motion.div>
