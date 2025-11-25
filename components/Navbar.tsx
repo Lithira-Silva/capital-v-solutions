@@ -31,31 +31,31 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-brand-light/80 dark:bg-brand-dark/80 backdrop-blur-md shadow-sm border-b border-brand-gold/20"
+          ? "bg-brand-light/90 dark:bg-brand-dark/90 backdrop-blur-xl shadow-sm"
           : "bg-transparent"
       )}
     >
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl md:text-2xl font-bold tracking-tight text-brand-text-dark dark:text-brand-text-light">
-              Capital <span className="text-brand-gold">V</span> Solutions
+            <span className="text-xl md:text-2xl font-heading font-semibold tracking-tight text-brand-text-dark dark:text-brand-text-light">
+              Capital <span className="text-[var(--color-gold)]">V</span> Solutions
             </span>
           </Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-brand-text-dark/80 dark:text-brand-text-light/80 hover:text-brand-red transition-colors"
+                className="font-body text-sm font-medium text-brand-text-dark/80 dark:text-brand-text-light/80 hover:text-[var(--color-red)] transition-colors cursor-pointer"
               >
                 {link.name}
-              </Link>
+              </a>
             ))}
-            <Button variant="brand">Let&apos;s Build Your Solution</Button>
+            <Button variant="brand" className="rounded-full px-6 py-2.5 shadow-lg shadow-[rgba(178,34,34,0.3)] hover:-translate-y-0.5 transition-all">Let&apos;s Build Your Solution</Button>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -73,14 +73,14 @@ export function Navbar() {
         <div className="md:hidden absolute top-20 left-0 w-full bg-brand-light dark:bg-brand-dark border-b border-brand-gold/20 p-4 shadow-lg animate-in slide-in-from-top-5">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
                 href={link.href}
-                className="text-base font-medium text-brand-text-dark dark:text-brand-text-light hover:text-brand-red py-2"
+                className="text-base font-medium text-brand-text-dark dark:text-brand-text-light hover:text-brand-red py-2 cursor-pointer"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
-              </Link>
+              </a>
             ))}
             <Button variant="brand" className="w-full">
               Let&apos;s Build Your Solution

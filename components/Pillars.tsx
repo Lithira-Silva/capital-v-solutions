@@ -42,18 +42,21 @@ const pillars = [
 
 export function Pillars() {
   return (
-    <section id="pillars" className="py-24 bg-brand-dark relative overflow-hidden">
+    <section id="pillars" className="py-20 md:py-28 bg-brand-dark relative overflow-hidden">
       {/* Subtle background accent */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-gold/5 rounded-full blur-[100px]" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[var(--color-gold)]/5 rounded-full blur-[120px]" />
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <p className="font-body text-[11px] uppercase tracking-[0.18em] text-[var(--color-gold)] mb-4 font-semibold">
+            Our Foundation
+          </p>
+          <h2 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6">
             Our Pillars
           </h2>
-          <p className="text-brand-text-muted max-w-2xl mx-auto">
+          <p className="font-body text-lg text-[var(--color-text-muted)] max-w-2xl mx-auto leading-relaxed">
             We focus on the three critical layers of modern enterprise technology.
           </p>
         </div>
@@ -67,24 +70,24 @@ export function Pillars() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="bg-white/5 border-brand-gold/10 hover:border-brand-gold/30 transition-all duration-300 hover:-translate-y-1 h-full group">
-                <div className="h-1 w-full bg-gradient-to-r from-brand-gold/50 to-brand-gold/10 rounded-t-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center mb-4 group-hover:bg-brand-gold/20 transition-colors">
-                    <pillar.icon className="h-6 w-6 text-brand-gold" />
+              <Card className="relative rounded-2xl border border-white/5 bg-white/5 p-8 md:p-10 backdrop-blur-sm transition-all hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(0,0,0,0.45)] h-full group">
+                <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-[var(--color-gold-dark)] via-[var(--color-gold)] to-[var(--color-gold-dark)] opacity-0 group-hover:opacity-100 transition-opacity" />
+                <CardHeader className="p-0 mb-6">
+                  <div className="w-14 h-14 rounded-full bg-[var(--color-gold)]/10 flex items-center justify-center mb-6 group-hover:bg-[var(--color-gold)]/20 transition-colors">
+                    <pillar.icon className="h-6 w-6 text-[var(--color-gold)]" />
                   </div>
-                  <CardTitle className="text-xl text-white mb-2">
+                  <CardTitle className="font-heading text-2xl font-semibold text-white mb-3">
                     {pillar.title}
                   </CardTitle>
-                  <p className="text-brand-text-muted text-sm leading-relaxed">
+                  <p className="font-body text-[var(--color-text-muted)] text-sm leading-relaxed">
                     {pillar.description}
                   </p>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
+                <CardContent className="p-0">
+                  <ul className="space-y-3">
                     {pillar.bullets.map((bullet, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-gray-400">
-                        <div className="w-1.5 h-1.5 rounded-full bg-brand-red" />
+                      <li key={i} className="flex items-center gap-2 font-body text-sm text-gray-400">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-red)]" />
                         {bullet}
                       </li>
                     ))}

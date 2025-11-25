@@ -5,8 +5,8 @@ import { AlertCircle, CheckCircle2 } from "lucide-react";
 
 export function Problem() {
   return (
-    <section className="py-24 bg-brand-light dark:bg-[#0B0C10]">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="py-20 md:py-28 bg-brand-light dark:bg-[#0B0C10]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -14,16 +14,16 @@ export function Problem() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-brand-red font-semibold tracking-wider uppercase text-sm">
+            <p className="font-body text-[11px] uppercase tracking-[0.18em] text-[var(--color-red)] mb-4 font-semibold">
               The Challenge
-            </span>
-            <h2 className="mt-4 text-3xl md:text-4xl font-bold text-brand-text-dark dark:text-brand-text-light mb-6">
+            </p>
+            <h2 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight text-brand-text-dark dark:text-brand-text-light mb-6 leading-tight">
               Ambitious goals. <br />
-              <span className="text-brand-text-muted">
+              <span className="text-[var(--color-text-muted)]">
                 Fragile tech foundations.
               </span>
             </h2>
-            <p className="text-lg text-brand-text-muted leading-relaxed">
+            <p className="font-body text-lg text-[var(--color-text-muted)] leading-relaxed">
               Many enterprises have big digital ambitions but are held back by
               legacy systems, siloed data, and fragile integrations. Instead of
               accelerating the business, technology becomes the bottleneck that
@@ -36,13 +36,14 @@ export function Problem() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white dark:bg-white/5 p-8 rounded-2xl border border-brand-gold/10 shadow-sm"
+            className="relative rounded-2xl border border-white/5 bg-white dark:bg-white/5 p-8 md:p-10 backdrop-blur-sm transition-all hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(0,0,0,0.15)]"
           >
-            <h3 className="text-xl font-semibold mb-6 text-brand-text-dark dark:text-brand-text-light flex items-center gap-2">
-              <AlertCircle className="text-brand-red h-5 w-5" />
+            <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-[var(--color-gold-dark)] via-[var(--color-gold)] to-[var(--color-gold-dark)]" />
+            <h3 className="font-heading text-xl font-semibold mb-8 text-brand-text-dark dark:text-brand-text-light flex items-center gap-2">
+              <AlertCircle className="text-[var(--color-red)] h-5 w-5" />
               Common Roadblocks
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-5">
               {[
                 "Data trapped in silos, inaccessible for decision making",
                 "Manual processes slowing down operations",
@@ -51,8 +52,8 @@ export function Problem() {
                 "Difficulty scaling infrastructure with demand",
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-brand-gold shrink-0 mt-0.5" />
-                  <span className="text-brand-text-muted">{item}</span>
+                  <CheckCircle2 className="h-5 w-5 text-[var(--color-gold)] shrink-0 mt-0.5" />
+                  <span className="font-body text-[var(--color-text-muted)]">{item}</span>
                 </li>
               ))}
             </ul>

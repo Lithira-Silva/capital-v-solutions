@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -76,9 +80,29 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  :root {
+    --color-gold: #D4AF37;
+    --color-gold-dark: #C9A032;
+    --color-red: #B22222;
+    --color-red-dark: #8A1616;
+    --color-base-dark: #050509;
+    --color-base-light: #F5F5F7;
+    --color-text-main-dark: #F8F8F8;
+    --color-text-main-light: #111111;
+    --color-text-muted: #6E6E73;
+  }
 }
 
 /* Custom Utilities */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
 .text-gradient-gold {
   @apply bg-clip-text text-transparent bg-metallic-gradient;
 }

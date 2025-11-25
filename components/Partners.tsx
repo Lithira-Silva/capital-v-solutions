@@ -2,12 +2,15 @@
 
 export function Partners() {
   return (
-    <section className="py-20 bg-brand-dark border-b border-white/5">
-      <div className="container mx-auto px-4 md:px-6 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
+    <section className="py-20 md:py-24 bg-brand-dark border-b border-white/5">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p className="font-body text-[11px] uppercase tracking-[0.18em] text-[var(--color-gold)] mb-4 font-semibold">
+          Our Clients
+        </p>
+        <h2 className="font-heading text-3xl md:text-4xl font-semibold tracking-tight text-white mb-6">
           Who We Partner With
         </h2>
-        <p className="text-lg text-brand-text-muted max-w-3xl mx-auto mb-12">
+        <p className="font-body text-lg text-[var(--color-text-muted)] max-w-3xl mx-auto mb-16 leading-relaxed">
           We work with growth-focused enterprises, scale-ups, and business units
           that want technology to become a true force multiplier.
         </p>
@@ -20,7 +23,7 @@ export function Partners() {
           ].map((item, index) => (
             <div
               key={index}
-              className="p-6 rounded-lg bg-white/5 border border-white/10 text-brand-text-light font-medium"
+              className="font-body p-8 rounded-2xl bg-white/5 border border-white/10 text-brand-text-light font-medium hover:-translate-y-1 transition-all"
             >
               {item}
             </div>

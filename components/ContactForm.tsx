@@ -27,40 +27,40 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="grid grid-cols-2 gap-4">
         <div className="space-y-2">
-          <label htmlFor="name" className="text-sm font-medium text-brand-text-light">
+          <label htmlFor="name" className="font-body text-sm font-medium text-brand-text-light">
             Name
           </label>
           <Input
             id="name"
             placeholder="John Doe"
             {...register("name", { required: "Name is required" })}
-            className="bg-white/10 border-white/10 text-white placeholder:text-white/40 focus:border-brand-gold"
+            className="bg-white/10 border-white/10 text-white placeholder:text-white/40 focus:border-[var(--color-gold)] rounded-lg"
           />
           {errors.name && (
-            <span className="text-xs text-brand-red">{errors.name.message}</span>
+            <span className="font-body text-xs text-[var(--color-red)]">{errors.name.message}</span>
           )}
         </div>
         <div className="space-y-2">
-          <label htmlFor="company" className="text-sm font-medium text-brand-text-light">
+          <label htmlFor="company" className="font-body text-sm font-medium text-brand-text-light">
             Company
           </label>
           <Input
             id="company"
             placeholder="Acme Inc."
             {...register("company", { required: "Company is required" })}
-            className="bg-white/10 border-white/10 text-white placeholder:text-white/40 focus:border-brand-gold"
+            className="bg-white/10 border-white/10 text-white placeholder:text-white/40 focus:border-[var(--color-gold)] rounded-lg"
           />
           {errors.company && (
-            <span className="text-xs text-brand-red">{errors.company.message}</span>
+            <span className="font-body text-xs text-[var(--color-red)]">{errors.company.message}</span>
           )}
         </div>
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="email" className="text-sm font-medium text-brand-text-light">
+        <label htmlFor="email" className="font-body text-sm font-medium text-brand-text-light">
           Email
         </label>
         <Input
@@ -74,32 +74,32 @@ export function ContactForm() {
               message: "Invalid email address",
             },
           })}
-          className="bg-white/10 border-white/10 text-white placeholder:text-white/40 focus:border-brand-gold"
+          className="bg-white/10 border-white/10 text-white placeholder:text-white/40 focus:border-[var(--color-gold)] rounded-lg"
         />
         {errors.email && (
-          <span className="text-xs text-brand-red">{errors.email.message}</span>
+          <span className="font-body text-xs text-[var(--color-red)]">{errors.email.message}</span>
         )}
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="message" className="text-sm font-medium text-brand-text-light">
+        <label htmlFor="message" className="font-body text-sm font-medium text-brand-text-light">
           Message
         </label>
         <Textarea
           id="message"
           placeholder="Tell us about your project..."
           {...register("message", { required: "Message is required" })}
-          className="bg-white/10 border-white/10 text-white placeholder:text-white/40 focus:border-brand-gold min-h-[120px]"
+          className="bg-white/10 border-white/10 text-white placeholder:text-white/40 focus:border-[var(--color-gold)] min-h-[120px] rounded-lg"
         />
         {errors.message && (
-          <span className="text-xs text-brand-red">{errors.message.message}</span>
+          <span className="font-body text-xs text-[var(--color-red)]">{errors.message.message}</span>
         )}
       </div>
 
       <Button
         type="submit"
         variant="brand"
-        className="w-full mt-2"
+        className="font-body w-full mt-4 rounded-full bg-[var(--color-red)] px-8 py-3 text-white hover:bg-[var(--color-red-dark)] shadow-lg shadow-[rgba(178,34,34,0.4)] hover:-translate-y-0.5 transition-all"
         disabled={isSubmitting}
       >
         {isSubmitting ? "Sending..." : "Send Message"}

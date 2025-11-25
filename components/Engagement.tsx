@@ -22,17 +22,20 @@ const steps = [
 
 export function Engagement() {
   return (
-    <section id="approach" className="py-24 bg-brand-dark border-y border-white/5">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+    <section id="approach" className="py-20 md:py-28 bg-brand-dark border-y border-white/5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-20">
+          <p className="font-body text-[11px] uppercase tracking-[0.18em] text-[var(--color-gold)] mb-4 font-semibold">
+            Our Process
+          </p>
+          <h2 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6">
             How We Work With You
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 relative">
+        <div className="grid md:grid-cols-3 gap-12 relative">
           {/* Connecting Line (Desktop) */}
-          <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-brand-gold/30 to-transparent" />
+          <div className="hidden md:block absolute top-16 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[var(--color-gold)]/30 to-transparent" />
 
           {steps.map((step, index) => (
             <motion.div
@@ -43,15 +46,15 @@ export function Engagement() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="relative flex flex-col items-center text-center"
             >
-              <div className="w-24 h-24 rounded-full bg-brand-dark border-2 border-brand-gold/30 flex items-center justify-center mb-6 relative z-10 shadow-[0_0_20px_rgba(212,175,55,0.1)]">
-                <span className="text-2xl font-bold text-brand-gold">
+              <div className="w-32 h-32 rounded-full bg-brand-dark border-2 border-[var(--color-gold)]/30 flex items-center justify-center mb-8 relative z-10 shadow-[0_0_30px_rgba(212,175,55,0.15)]">
+                <span className="font-heading text-3xl font-semibold text-[var(--color-gold)]">
                   {step.number}
                 </span>
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">
+              <h3 className="font-heading text-2xl font-semibold text-white mb-4">
                 {step.title}
               </h3>
-              <p className="text-brand-text-muted max-w-xs">
+              <p className="font-body text-[var(--color-text-muted)] max-w-xs leading-relaxed">
                 {step.description}
               </p>
             </motion.div>
