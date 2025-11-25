@@ -6,6 +6,32 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050509;
+  border-left: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 6px;
+  border: 2px solid #050509;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E5C158;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #D4AF37 #050509;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
