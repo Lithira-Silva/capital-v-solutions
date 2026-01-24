@@ -6,10 +6,6 @@ import { AlertCircle, CheckCircle2 } from "lucide-react";
 export function Problem() {
   return (
     <section className="relative py-20 md:py-28 bg-[#0A0A0A] overflow-hidden">
-      {/* Spotlight Effect */}
-      <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'radial-gradient(circle at 50% 50%, rgba(48, 0, 0, 0.2) 0%, transparent 70%)'
-      }} />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-start">

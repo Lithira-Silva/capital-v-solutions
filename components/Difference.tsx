@@ -24,8 +24,8 @@ const differentiators = [
 
 export function Difference() {
   return (
-    <section className="py-20 md:py-28 bg-[#0A0A0A]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-20 md:py-28 bg-[#0A0A0A] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="mb-16">
           <p className="font-body text-[11px] uppercase tracking-[0.18em] text-[var(--color-gold)] mb-4 font-semibold">
             Why Choose Us
