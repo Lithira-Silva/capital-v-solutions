@@ -101,7 +101,7 @@ export function Pillars() {
               transition={{ duration: 0.7, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
               className="group"
             >
-              <div className="relative h-full bg-white/60 backdrop-blur-xl border border-gray-200/50 rounded-3xl p-6 lg:p-8 transition-all duration-500 hover:border-[#D4AF37]/40 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-2">
+              <div className="relative h-full bg-white/40 backdrop-blur-2xl border-2 border-[#D4AF37]/30 rounded-3xl p-6 lg:p-8 transition-all duration-500 hover:border-[#D4AF37]/60 hover:shadow-[0_8px_30px_rgba(212,175,55,0.15),0_0_60px_rgba(212,175,55,0.1)] hover:-translate-y-2">
                 {/* Decorative corner accent */}
                 <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#D4AF37]/5 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 

@@ -4,7 +4,7 @@ import { Problem } from "@/components/Problem";
 import { Pillars } from "@/components/Pillars";
 import { Difference } from "@/components/Difference";
 import { Engagement } from "@/components/Engagement";
-import { TechStack } from "@/components/TechStack";
+import { TechStackMarquee } from "@/components/TechStackMarquee";
 import { Partners } from "@/components/Partners";
 import { CTA } from "@/components/CTA";
 import { Footer } from "@/components/Footer";
@@ -18,7 +18,7 @@ export default function Home() {
       <Pillars />
       <Difference />
       <Engagement />
-      <TechStack />
+      <TechStackMarquee />
       <Partners />
       <CTA />
       <Footer />

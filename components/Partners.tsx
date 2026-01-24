@@ -2,7 +2,7 @@
 
 export function Partners() {
   return (
-    <section className="py-20 md:py-24 bg-brand-dark border-b border-white/5">
+    <section className="py-20 md:py-24 bg-[#0A0A0A] border-b border-white/5">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p className="font-body text-[11px] uppercase tracking-[0.18em] text-[var(--color-gold)] mb-4 font-semibold">
           Our Clients

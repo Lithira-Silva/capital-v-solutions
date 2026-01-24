@@ -60,7 +60,13 @@ export function Hero() {
             >
               Build technology that{" "}
               <span className="inline-block relative">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728]">
+                <span 
+                  className="text-transparent bg-clip-text bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#B8860B]"
+                  style={{
+                    textShadow: '0 2px 8px rgba(212, 175, 55, 0.3)',
+                    WebkitTextStroke: '0.5px rgba(184, 134, 11, 0.15)'
+                  }}
+                >
                   powers
                 </span>
               </span>{" "}

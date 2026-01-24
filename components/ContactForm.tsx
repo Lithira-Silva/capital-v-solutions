@@ -112,7 +112,7 @@ export function ContactForm() {
       <Button
         type="submit"
         variant="brand"
-        className="group font-body w-full mt-6 rounded-2xl bg-gradient-to-r from-[#B22222] to-[#C1121F] px-8 py-4 text-base text-white font-semibold hover:from-[#8B1A1A] hover:to-[#A01616] shadow-[0_12px_40px_rgba(178,34,34,0.4)] hover:shadow-[0_16px_50px_rgba(178,34,34,0.5)] hover:-translate-y-1 transition-all duration-500 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+        className="group font-body w-full mt-6 rounded-2xl bg-gradient-to-r from-[#B22222] to-[#C1121F] px-8 py-4 text-base text-white font-semibold hover:from-[#8B1A1A] hover:to-[#A01616] shadow-[0_6px_20px_rgba(178,34,34,0.25)] hover:shadow-[0_8px_30px_rgba(178,34,34,0.35)] hover:-translate-y-1 transition-all duration-500 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
         disabled={isSubmitting}
       >
         {isSubmitting ? (
