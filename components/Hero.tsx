@@ -110,18 +110,19 @@ export function Hero() {
 
             {/* Trust indicators - Mobile only */}
             <motion.div
-              className="flex lg:hidden items-center gap-10 pt-12 mt-12 border-t border-[#0F0F0F]/10"
+              className="flex lg:hidden items-center justify-center gap-8 pt-12 mt-12 border-t border-[#0F0F0F]/10"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <div className="flex flex-col gap-1">
-                <div className="text-2xl font-heading font-bold text-[#0F0F0F]">99.9%</div>
-                <div className="font-body text-[11px] font-medium text-[#0F0F0F]/50 tracking-wide uppercase">Uptime</div>
+              <div className="flex flex-col gap-2 text-center">
+                <div className="text-3xl font-heading font-bold bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#B8860B] bg-clip-text text-transparent">99.9%</div>
+                <div className="font-body text-xs font-semibold text-[#0F0F0F]/60 tracking-wider uppercase">Uptime</div>
               </div>
-              <div className="flex flex-col gap-1">
-                <div className="text-2xl font-heading font-bold text-[#0F0F0F]">24/7</div>
-                <div className="font-body text-[11px] font-medium text-[#0F0F0F]/50 tracking-wide uppercase">Support</div>
+              <div className="h-12 w-px bg-gradient-to-b from-transparent via-[#D4AF37]/30 to-transparent"></div>
+              <div className="flex flex-col gap-2 text-center">
+                <div className="text-3xl font-heading font-bold bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#B8860B] bg-clip-text text-transparent">24/7</div>
+                <div className="font-body text-xs font-semibold text-[#0F0F0F]/60 tracking-wider uppercase">Support</div>
               </div>
             </motion.div>
           </motion.div>
@@ -152,17 +153,26 @@ export function Hero() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F]/5 via-transparent to-transparent" />
                 </div>
 
-                {/* Minimal stats overlay */}
-                <div className="absolute bottom-6 left-6 right-6 bg-[#FFFEF9]/95 backdrop-blur-sm rounded-xl border border-[#0F0F0F]/10 p-5">
-                  <div className="grid grid-cols-2 gap-6">
-                    <div className="text-center">
-                      <div className="text-xl font-heading font-bold text-[#0F0F0F] mb-0.5">99.9%</div>
-                      <div className="font-body text-[10px] font-medium text-[#0F0F0F]/50 tracking-wide uppercase">Uptime</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-xl font-heading font-bold text-[#0F0F0F] mb-0.5">24/7</div>
-                      <div className="font-body text-[10px] font-medium text-[#0F0F0F]/50 tracking-wide uppercase">Support</div>
-                    </div>
+                {/* Premium stats overlay */}
+                <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-xl rounded-2xl border-2 border-[#D4AF37]/20 p-6 shadow-[0_8px_32px_rgba(212,175,55,0.15)]">
+                  <div className="flex items-center justify-around gap-6">
+                    <motion.div 
+                      className="flex flex-col gap-2 text-center flex-1"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+                      <div className="text-2xl font-heading font-bold bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#B8860B] bg-clip-text text-transparent">99.9%</div>
+                      <div className="font-body text-[10px] font-semibold text-[#0F0F0F]/60 tracking-widest uppercase">Uptime</div>
+                    </motion.div>
+                    <div className="h-16 w-px bg-gradient-to-b from-transparent via-[#D4AF37]/40 to-transparent"></div>
+                    <motion.div 
+                      className="flex flex-col gap-2 text-center flex-1"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+                      <div className="text-2xl font-heading font-bold bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#B8860B] bg-clip-text text-transparent">24/7</div>
+                      <div className="font-body text-[10px] font-semibold text-[#0F0F0F]/60 tracking-widest uppercase">Support</div>
+                    </motion.div>
                   </div>
                 </div>
               </div>
