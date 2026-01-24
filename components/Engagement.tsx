@@ -65,7 +65,23 @@ export function Engagement() {
         </div>
 
         {/* Premium Process Steps */}
-        <div className="grid md:grid-cols-3 gap-10 lg:gap-12">
+        <div className="relative grid md:grid-cols-3 gap-10 lg:gap-12">
+          {/* Connector Line - Desktop Only (Behind Cards) */}
+          <div className="hidden md:block absolute top-12 lg:top-14 left-[16.666%] right-[16.666%] h-[2px] pointer-events-none">
+            <div className="w-full h-full bg-gradient-to-r from-[#D4AF37]/30 via-[#D4AF37]/20 to-[#D4AF37]/30" />
+            <motion.div
+              className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent"
+              initial={{ x: "-100%" }}
+              animate={{ x: "200%" }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                repeatDelay: 2,
+                ease: "easeInOut",
+              }}
+            />
+          </div>
+
           {steps.map((step, index) => (
             <motion.div
               key={index}
@@ -112,28 +128,6 @@ export function Engagement() {
               <p className="font-body text-sm lg:text-base text-[#0F0F0F]/65 leading-[1.7] max-w-sm px-4 font-light">
                 {step.description}
               </p>
-
-              {/* Premium Connector Line (Desktop) */}
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-12 lg:top-14 left-[60%] w-[calc(100%+2.5rem)] lg:w-[calc(100%+3rem)] h-[2px] pointer-events-none">
-                  {/* Base gradient line */}
-                  <div className="w-full h-full bg-gradient-to-r from-[#D4AF37]/20 via-[#D4AF37]/10 to-transparent" />
-                  {/* Animated shimmer overlay */}
-                  <motion.div
-                    className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-[#D4AF37]/40 to-transparent"
-                    initial={{ x: "-100%" }}
-                    animate={{ x: "200%" }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      repeatDelay: 2,
-                      ease: "easeInOut",
-                    }}
-                  />
-                  {/* Decorative arrow */}
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 border-r-2 border-t-2 border-[#D4AF37]/30 rotate-45 -mr-1" />
-                </div>
-              )}
 
               {/* Bottom accent (mobile) */}
               {index < steps.length - 1 && (

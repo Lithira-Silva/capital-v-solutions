@@ -91,7 +91,23 @@ export function Pillars() {
         </div>
 
         {/* Premium Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="relative grid md:grid-cols-3 gap-6 lg:gap-8">
+          {/* Connector Line - Desktop Only */}
+          <div className="hidden md:block absolute top-8 left-[20%] right-[20%] h-[2px] pointer-events-none z-0">
+            <div className="w-full h-full bg-gradient-to-r from-[#D4AF37]/30 via-[#D4AF37]/20 to-[#D4AF37]/30" />
+            <motion.div
+              className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent"
+              initial={{ x: "-100%" }}
+              animate={{ x: "200%" }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                repeatDelay: 2,
+                ease: "easeInOut",
+              }}
+            />
+          </div>
+
           {pillars.map((pillar, index) => (
             <motion.div
               key={index}
@@ -144,9 +160,21 @@ export function Pillars() {
                   ))}
                 </div>
 
-                {/* Premium accent line with gradient */}
-                <div className="absolute bottom-0 left-6 right-6 lg:left-8 lg:right-8 h-[2px] bg-gradient-to-r from-transparent via-[#D4AF37]/30 to-transparent group-hover:via-[#D4AF37]/60 transition-all duration-500">
-                  <div className="h-full w-1/3 bg-gradient-to-r from-[#D4AF37] to-transparent animate-shimmer" />
+                {/* Premium bottom accent with smooth animation */}
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] overflow-hidden rounded-b-3xl">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#D4AF37]/25 to-transparent group-hover:via-[#D4AF37]/40 transition-all duration-700 ease-out" />
+                  <motion.div
+                    className="absolute inset-0 w-1/3 h-full bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent blur-[1px]"
+                    animate={{
+                      x: ['-33%', '133%'],
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      repeatDelay: 1.5,
+                      ease: [0.4, 0, 0.2, 1],
+                    }}
+                  />
                 </div>
 
                 {/* Card number indicator - Metallic Gold */}
