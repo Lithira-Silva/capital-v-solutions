@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Sparkles, Zap, TrendingUp, Cloud, Brain, BarChart, Activity, Plug } from "lucide-react";
-import Image from "next/image";
 import { useRef } from "react";
 
 export function Hero() {
@@ -93,6 +92,7 @@ export function Hero() {
               <Button 
                 variant="brand" 
                 size="lg" 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="font-body rounded-full bg-[#A61C26] px-8 py-6 text-base font-medium text-white hover:bg-[#8C151F] ring-1 ring-white/20 transition-all"
               >
                 Talk to an Expert
@@ -100,6 +100,7 @@ export function Hero() {
               <Button
                 variant="brand-outline"
                 size="lg"
+                onClick={() => document.getElementById('approach')?.scrollIntoView({ behavior: 'smooth' })}
                 className="font-body rounded-full border border-[#D4AF37]/50 text-[#0F0F0F] px-8 py-6 text-base font-medium hover:bg-[#D4AF37]/5 hover:border-[#D4AF37] transition-all group"
               >
                 View Our Approach
@@ -139,16 +140,18 @@ export function Hero() {
             <div className="relative w-full aspect-[4/5] max-w-[550px] ml-auto">
               {/* Minimal frame */}
               <div className="absolute inset-0 rounded-2xl border border-[#0F0F0F]/10 overflow-hidden bg-[#FFFEF9] shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
-                {/* Hero Image */}
+                {/* Hero Video */}
                 <div className="relative w-full h-full">
-                  <Image
-                    src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop"
-                    alt="Enterprise business solutions and analytics platforms"
-                    fill
-                    className="object-cover"
-                    priority
-                    sizes="(max-width: 1024px) 0vw, 45vw"
-                  />
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  >
+                    <source src="/videos/Digital_Network_Data_Flow_Video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                   {/* Subtle overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F]/5 via-transparent to-transparent" />
                 </div>
