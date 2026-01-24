@@ -58,8 +58,8 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-white/95 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.08)] border-b border-[var(--color-gold)]/20"
-          : "bg-white/80 backdrop-blur-md shadow-[0_2px_16px_rgba(0,0,0,0.04)] border-b border-[var(--color-gold)]/10"
+          ? "bg-white md:bg-white/95 md:backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.08)] border-b border-[var(--color-gold)]/20"
+          : "bg-white md:bg-white/80 md:backdrop-blur-md shadow-[0_2px_16px_rgba(0,0,0,0.04)] border-b border-[var(--color-gold)]/10"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
