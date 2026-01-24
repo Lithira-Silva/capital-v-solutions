@@ -18,7 +18,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center pt-32 pb-20 md:py-40 overflow-hidden bg-[#FAF9F6]"
+      className="relative min-h-screen flex items-center pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden bg-[#FAF9F6]"
     >
       {/* Minimal Background Elements */}
       <motion.div className="absolute inset-0 z-0" style={{ opacity }}>
@@ -29,7 +29,7 @@ export function Hero() {
 
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10 w-full">
         <motion.div
-          className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center min-h-[75vh]"
+          className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
           style={{ scale }}
         >
           {/* Left Content */}
@@ -37,7 +37,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-2xl space-y-8"
+            className="max-w-2xl space-y-6"
           >
             {/* Simplified Badge - Apple Style */}
             <motion.div
@@ -52,7 +52,7 @@ export function Hero() {
 
             {/* Hero Heading - Apple Style Typography */}
             <motion.h1
-              className="font-heading text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-[#0F0F0F] leading-[1.05]"
+              className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0F0F0F] leading-[1.05]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
@@ -74,7 +74,7 @@ export function Hero() {
 
             {/* Description - Apple Style */}
             <motion.p
-              className="font-body text-xl lg:text-2xl text-[#0F0F0F]/70 leading-relaxed max-w-xl font-normal"
+              className="font-body text-lg lg:text-xl text-[#0F0F0F]/70 leading-relaxed max-w-xl font-normal"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
@@ -84,7 +84,7 @@ export function Hero() {
 
             {/* CTA Buttons - Deep Crimson */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 pt-4"
+              className="flex flex-col sm:flex-row gap-3 pt-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
@@ -110,7 +110,7 @@ export function Hero() {
 
             {/* Trust indicators - Mobile only */}
             <motion.div
-              className="flex lg:hidden items-center justify-center gap-8 pt-12 mt-12 border-t border-[#0F0F0F]/10"
+              className="flex lg:hidden items-center justify-center gap-8 pt-8 mt-8 border-t border-[#0F0F0F]/10"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.5 }}
