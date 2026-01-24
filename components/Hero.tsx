@@ -40,56 +40,54 @@ export function Hero() {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-2xl space-y-8"
           >
-            {/* Minimal Badge */}
+            {/* Simplified Badge - Apple Style */}
             <motion.div
-              className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[#D4AF37]/30 bg-[#FFFEF9]"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
-              <span className="font-body text-[10px] font-medium tracking-[0.2em] text-[#0F0F0F]/70 uppercase">
+              <span className="font-body text-xs font-medium tracking-widest text-gray-500 uppercase">
                 Enterprise Technology
               </span>
             </motion.div>
 
-            {/* Hero Heading */}
+            {/* Hero Heading - Apple Style Typography */}
             <motion.h1
-              className="font-heading text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold tracking-[-0.02em] text-[#0F0F0F] leading-[1.05]"
+              className="font-heading text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-[#0F0F0F] leading-[1.05]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             >
               Build technology that{" "}
               <span className="inline-block relative">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#C9A032]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728]">
                   powers
                 </span>
               </span>{" "}
               your business
             </motion.h1>
 
-            {/* Description */}
+            {/* Description - Apple Style */}
             <motion.p
-              className="font-body text-lg lg:text-xl text-[#0F0F0F]/60 leading-[1.7] max-w-xl"
+              className="font-body text-xl lg:text-2xl text-[#0F0F0F]/70 leading-relaxed max-w-xl font-normal"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
               Capital V Solutions helps enterprises design robust platforms, intelligent data foundations, and AI-driven automation.
             </motion.p>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons - Deep Crimson */}
             <motion.div
               className="flex flex-col sm:flex-row gap-4 pt-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             >
               <Button 
                 variant="brand" 
                 size="lg" 
-                className="font-body rounded-full bg-[#B22222] px-8 py-6 text-base font-medium text-white hover:bg-[#8B1A1A] shadow-[0_4px_20px_rgba(178,34,34,0.25)] hover:shadow-[0_6px_28px_rgba(178,34,34,0.35)] transition-all"
+                className="font-body rounded-full bg-[#A61C26] px-8 py-6 text-base font-medium text-white hover:bg-[#8C151F] ring-1 ring-white/20 transition-all"
               >
                 Talk to an Expert
               </Button>

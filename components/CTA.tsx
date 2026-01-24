@@ -48,7 +48,7 @@ export function CTA() {
               <Button 
                 variant="brand" 
                 size="lg" 
-                className="group font-body rounded-2xl bg-gradient-to-r from-[#B22222] to-[#C1121F] px-10 py-6 text-base font-semibold text-white hover:from-[#8B1A1A] hover:to-[#A01616] shadow-[0_12px_40px_rgba(178,34,34,0.4)] hover:shadow-[0_16px_50px_rgba(178,34,34,0.5)] hover:-translate-y-1 transition-all duration-500 flex items-center justify-center gap-3"
+                className="group font-body rounded-2xl bg-[#A61C26] px-10 py-6 text-base font-semibold text-white hover:bg-[#8C151F] ring-1 ring-white/20 hover:ring-white/30 hover:-translate-y-1 transition-all duration-500 flex items-center justify-center gap-3"
               >
                 <Calendar className="w-5 h-5 group-hover:scale-110 transition-transform" strokeWidth={2} />
                 Schedule a Discovery Call
@@ -72,7 +72,7 @@ export function CTA() {
             transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="relative group"
           >
-            <div className="relative rounded-3xl border-2 border-[#0F0F0F]/8 bg-gradient-to-b from-[#FFFEF9] to-[#F5F3ED] p-10 lg:p-12 backdrop-blur-sm shadow-[0_24px_80px_rgba(0,0,0,0.12)] group-hover:shadow-[0_32px_100px_rgba(0,0,0,0.15),0_0_0_1px_rgba(212,175,55,0.1)] group-hover:border-[#D4AF37]/20 transition-all duration-500">
+            <div className="relative rounded-3xl border border-gray-200/50 bg-white/60 backdrop-blur-xl p-10 lg:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_12px_40px_rgb(0,0,0,0.06)] group-hover:border-[#D4AF37]/20 transition-all duration-500">
               {/* Decorative corner accents */}
               <div className="absolute -top-1 -left-1 w-6 h-6 border-t-2 border-l-2 border-[#D4AF37]/0 group-hover:border-[#D4AF37]/50 rounded-tl-2xl transition-all duration-500" />
               <div className="absolute -bottom-1 -right-1 w-6 h-6 border-b-2 border-r-2 border-[#D4AF37]/0 group-hover:border-[#D4AF37]/50 rounded-br-2xl transition-all duration-500" />

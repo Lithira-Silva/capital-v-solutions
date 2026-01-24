@@ -46,13 +46,17 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom Brand Colors
+        // Custom Brand Colors - Lux-Minimalist System
         brand: {
           gold: "#D4AF37",
           "gold-dark": "#C9A032",
           red: "#B22222",
           "red-alt": "#C1121F",
+          // Deep Crimson (Venetian Red)
+          crimson: "#A61C26",
+          "crimson-dark": "#8C151F",
           dark: "#050509",
+          "soft-black": "#0A0A0A",
           light: "#F5F5F7",
           "text-dark": "#111111",
           "text-light": "#F8F8F8",
@@ -61,6 +65,10 @@ const config: Config = {
       },
       backgroundImage: {
         "metallic-gradient": "linear-gradient(to right, #B88923, #D4AF37, #F1C96B)",
+        // Metallic Gold Gradient - Crucial for luxury aesthetic
+        "gold-metallic": "linear-gradient(to right, #BF953F, #FCF6BA, #B38728)",
+        // Spotlight effect for dark sections
+        "spotlight-red": "radial-gradient(circle, rgba(48, 0, 0, 0.2) 0%, transparent 70%)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -72,9 +80,22 @@ const config: Config = {
           '0%': { transform: 'translateX(-100%)' },
           '100%': { transform: 'translateX(300%)' },
         },
+        "marquee": {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        "float": {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
       },
       animation: {
         shimmer: 'shimmer 3s ease-in-out infinite',
+        marquee: 'marquee 30s linear infinite',
+        float: 'float 3s ease-in-out infinite',
+      },
+      backdropBlur: {
+        xs: '2px',
       },
     },
   },
