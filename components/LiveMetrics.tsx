@@ -10,11 +10,6 @@ const metrics = [
     icon: TrendingUp,
   },
   {
-    value: "50+",
-    label: "Enterprise Clients",
-    icon: Users,
-  },
-  {
     value: "24/7",
     label: "Support",
     icon: Clock,

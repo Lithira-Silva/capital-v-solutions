@@ -120,10 +120,6 @@ export function Hero() {
                 <div className="font-body text-[11px] font-medium text-[#0F0F0F]/50 tracking-wide uppercase">Uptime</div>
               </div>
               <div className="flex flex-col gap-1">
-                <div className="text-2xl font-heading font-bold text-[#0F0F0F]">50+</div>
-                <div className="font-body text-[11px] font-medium text-[#0F0F0F]/50 tracking-wide uppercase">Clients</div>
-              </div>
-              <div className="flex flex-col gap-1">
                 <div className="text-2xl font-heading font-bold text-[#0F0F0F]">24/7</div>
                 <div className="font-body text-[11px] font-medium text-[#0F0F0F]/50 tracking-wide uppercase">Support</div>
               </div>
@@ -158,14 +154,10 @@ export function Hero() {
 
                 {/* Minimal stats overlay */}
                 <div className="absolute bottom-6 left-6 right-6 bg-[#FFFEF9]/95 backdrop-blur-sm rounded-xl border border-[#0F0F0F]/10 p-5">
-                  <div className="grid grid-cols-3 gap-4">
+                  <div className="grid grid-cols-2 gap-6">
                     <div className="text-center">
                       <div className="text-xl font-heading font-bold text-[#0F0F0F] mb-0.5">99.9%</div>
                       <div className="font-body text-[10px] font-medium text-[#0F0F0F]/50 tracking-wide uppercase">Uptime</div>
-                    </div>
-                    <div className="text-center border-x border-[#0F0F0F]/10">
-                      <div className="text-xl font-heading font-bold text-[#0F0F0F] mb-0.5">50+</div>
-                      <div className="font-body text-[10px] font-medium text-[#0F0F0F]/50 tracking-wide uppercase">Clients</div>
                     </div>
                     <div className="text-center">
                       <div className="text-xl font-heading font-bold text-[#0F0F0F] mb-0.5">24/7</div>
