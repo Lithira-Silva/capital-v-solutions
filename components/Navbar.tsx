@@ -82,7 +82,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav - Centered */}
-          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-2 bg-[#FAF9F6] px-3 py-1.5 rounded-full border border-black/10 shadow-[0_2px_12px_rgba(0,0,0,0.08)]">
+          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-2 bg-gradient-to-r from-[#FEFDFB]/95 via-white/90 to-[#FEFDFB]/95 px-3 py-1.5 rounded-full border border-black/10 shadow-[0_2px_12px_rgba(0,0,0,0.08)]">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -90,8 +90,8 @@ export function Navbar() {
                 className={cn(
                   "relative px-4 py-2 font-body text-[13px] font-medium transition-all duration-300 cursor-pointer rounded-full",
                   activeSection === link.id
-                    ? "text-[#0F0F0F] bg-white shadow-[0_1px_4px_rgba(0,0,0,0.1),inset_0_0_0_1px_rgba(212,175,55,0.3)]"
-                    : "text-[#0F0F0F]/65 hover:text-[#0F0F0F] hover:bg-white/80"
+                    ? "text-[#0F0F0F] bg-gradient-to-br from-white to-[#FAF9F6] shadow-[0_1px_4px_rgba(0,0,0,0.1),inset_0_0_0_1px_rgba(212,175,55,0.35)]"
+                    : "text-[#0F0F0F]/65 hover:text-[#0F0F0F] hover:bg-white/90"
                 )}
               >
                 {link.name}

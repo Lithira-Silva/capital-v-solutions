@@ -18,13 +18,13 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center pt-8 pb-16 md:pt-12 md:pb-20 overflow-hidden bg-[#FAF9F6]"
+      className="relative min-h-screen flex items-center pt-8 pb-16 md:pt-12 md:pb-20 overflow-hidden bg-gradient-to-br from-[#FEFDFB] via-[#FAF9F6] to-[#F8F7F3]"
     >
       {/* Minimal Background Elements */}
       <motion.div className="absolute inset-0 z-0" style={{ opacity }}>
         {/* Subtle gradient accent */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-[#D4AF37]/5 to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tl from-[#B22222]/4 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-[#D4AF37]/8 via-[#D4AF37]/3 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tl from-[#A61C26]/6 via-[#A61C26]/2 to-transparent rounded-full blur-3xl" />
       </motion.div>
 
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10 w-full">
@@ -136,7 +136,7 @@ export function Hero() {
           >
             <div className="relative w-full aspect-[4/5] max-w-[550px] ml-auto">
               {/* Minimal frame */}
-              <div className="absolute inset-0 rounded-2xl border border-[#0F0F0F]/10 overflow-hidden bg-[#FFFEF9] shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
+              <div className="absolute inset-0 rounded-2xl border border-[#0F0F0F]/10 overflow-hidden bg-gradient-to-br from-white/80 via-[#FFFEF9]/90 to-[#FAF9F6]/80 shadow-[0_20px_60px_rgba(0,0,0,0.1)]">
                 {/* Hero Video */}
                 <div className="relative w-full h-full">
                   <video
@@ -154,7 +154,7 @@ export function Hero() {
                 </div>
 
                 {/* Premium stats overlay */}
-                <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-xl rounded-2xl border-2 border-[#D4AF37]/20 p-6 shadow-[0_8px_32px_rgba(212,175,55,0.15)]">
+                <div className="absolute bottom-6 left-6 right-6 bg-gradient-to-br from-white/95 via-[#FFFEF9]/90 to-white/85 backdrop-blur-xl rounded-2xl border-2 border-[#D4AF37]/25 p-6 shadow-[0_8px_32px_rgba(212,175,55,0.2)]">
                   <div className="flex items-center justify-around gap-6">
                     <motion.div 
                       className="flex flex-col gap-2 text-center flex-1"

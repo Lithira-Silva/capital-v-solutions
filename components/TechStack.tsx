@@ -13,13 +13,13 @@ export function TechStack() {
   ];
 
   return (
-    <section id="tech" className="min-h-screen flex items-center py-24 md:py-32 bg-gradient-to-b from-[#FAF9F6] via-[#FFFEF9] to-[#FAF9F6] relative overflow-hidden">
+    <section id="tech" className="min-h-screen flex items-center py-24 md:py-32 bg-gradient-to-b from-[#F5F3ED] via-[#FEFDFB] to-[#F8F7F3] relative overflow-hidden">
       {/* Premium Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Primary gradient orb */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-to-br from-[#D4AF37]/8 via-[#D4AF37]/4 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-to-br from-[#D4AF37]/10 via-[#D4AF37]/4 to-transparent rounded-full blur-3xl" />
         {/* Secondary accent orb */}
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-tl from-[#B22222]/5 via-[#B22222]/2 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-tl from-[#A61C26]/6 via-[#A61C26]/2 to-transparent rounded-full blur-3xl" />
         {/* Subtle grid pattern overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(15,15,15,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(15,15,15,0.02)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
       </div>

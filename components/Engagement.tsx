@@ -26,13 +26,13 @@ const steps = [
 
 export function Engagement() {
   return (
-    <section id="approach" className="min-h-screen flex items-center py-24 md:py-32 bg-gradient-to-b from-[#F0EDE5] via-[#EBE7DD] to-[#F0EDE5] relative overflow-hidden">
+    <section id="approach" className="min-h-screen flex items-center py-24 md:py-32 bg-gradient-to-b from-[#FEFDFB] via-[#F8F7F3] to-[#F5F3ED] relative overflow-hidden">
       {/* Premium Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Primary gradient orb */}
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tl from-[#B22222]/10 via-[#B22222]/5 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tl from-[#A61C26]/8 via-[#A61C26]/3 to-transparent rounded-full blur-3xl" />
         {/* Secondary accent orb */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-[#D4AF37]/8 via-[#D4AF37]/4 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-[#D4AF37]/10 via-[#D4AF37]/4 to-transparent rounded-full blur-3xl" />
         {/* Subtle grid pattern overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(15,15,15,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(15,15,15,0.025)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
       </div>

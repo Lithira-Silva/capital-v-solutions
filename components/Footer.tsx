@@ -3,7 +3,7 @@ import { Linkedin, Shield, FileText } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-[#FFFEF9] border-t border-[var(--color-gold)]/15 py-12">
+    <footer className="bg-gradient-to-b from-[#FEFDFB] to-[#F8F7F3] border-t border-[#D4AF37]/20 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
