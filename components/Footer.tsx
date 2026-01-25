@@ -1,43 +1,113 @@
+"use client";
+
 import Image from "next/image";
-import { Linkedin, Shield, FileText } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-[#FEFDFB] to-[#F8F7F3] border-t border-[#D4AF37]/20 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-center md:text-left">
-            <div className="flex items-center gap-2 justify-center md:justify-start mb-3">
-              <span className="font-heading text-xl font-semibold tracking-tight text-[#0F0F0F] flex items-center gap-1">
+    <footer className="relative bg-gradient-to-b from-[#0F0F0F] via-[#1A1A1A] to-[#0F0F0F] border-t border-white/5 overflow-hidden">
+      {/* Subtle background glow */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-[#D4AF37]/6 via-[#D4AF37]/2 to-transparent rounded-full blur-3xl" />
+      </div>
+
+      <div className="relative z-10 max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 py-16">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
+          {/* Company Info */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-2">
+              <span className="font-heading text-2xl font-bold tracking-tight text-white flex items-center gap-1.5">
                 Capital{" "}
                 <span className="relative inline-flex items-center justify-center w-7 h-7">
                   <Image
                     src="/logo.png.PNG"
                     alt="V"
                     fill
-                    className="object-contain"
+                    className="object-contain drop-shadow-[0_0_8px_rgba(212,175,55,0.3)]"
                   />
                 </span>{" "}
                 Solutions
               </span>
             </div>
-            <p className="font-body text-sm text-[#6B6B6B]">
-              © {new Date().getFullYear()} Capital V Solutions. All rights reserved.
+            <p className="font-body text-sm text-gray-400 leading-relaxed max-w-xs">
+              Building technology backbones that power modern enterprises through robust platforms, intelligent data foundations, and AI-driven automation.
             </p>
           </div>
-          <div className="flex gap-8">
-            <a href="#" className="font-body text-sm text-[#6B6B6B] hover:text-[var(--color-gold)] transition-colors flex items-center gap-2">
-              <Shield className="w-4 h-4" />
-              Privacy Policy
-            </a>
-            <a href="#" className="font-body text-sm text-[#6B6B6B] hover:text-[var(--color-gold)] transition-colors flex items-center gap-2">
-              <FileText className="w-4 h-4" />
-              Terms of Service
-            </a>
-            <a href="#" className="font-body text-sm text-[#6B6B6B] hover:text-[var(--color-gold)] transition-colors flex items-center gap-2">
-              <Linkedin className="w-4 h-4" />
-              LinkedIn
-            </a>
+
+          {/* Quick Links */}
+          <div className="space-y-6">
+            <h3 className="font-heading text-sm font-semibold tracking-wider text-[#D4AF37] uppercase">
+              Quick Links
+            </h3>
+            <nav className="flex flex-col gap-3">
+              {[
+                { label: "Our Approach", href: "#pillars" },
+                { label: "Technology Stack", href: "#tech" },
+                { label: "Contact Us", href: "#contact" },
+              ].map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="font-body text-sm text-gray-400 hover:text-white transition-colors duration-300 w-fit group"
+                >
+                  <span className="relative">
+                    {link.label}
+                    <span className="absolute bottom-0 left-0 w-0 h-px bg-[#D4AF37] group-hover:w-full transition-all duration-300" />
+                  </span>
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-6">
+            <h3 className="font-heading text-sm font-semibold tracking-wider text-[#D4AF37] uppercase">
+              Get in Touch
+            </h3>
+            <div className="flex flex-col gap-4">
+              <a
+                href="mailto:contact@capitalvsolutions.com"
+                className="font-body text-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center gap-3 group"
+              >
+                <Mail className="w-4 h-4 text-[#D4AF37] group-hover:text-[#FCF6BA] transition-colors" strokeWidth={1.5} />
+                <span>contact@capitalvsolutions.com</span>
+              </a>
+              <a
+                href="tel:+1234567890"
+                className="font-body text-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center gap-3 group"
+              >
+                <Phone className="w-4 h-4 text-[#D4AF37] group-hover:text-[#FCF6BA] transition-colors" strokeWidth={1.5} />
+                <span>+1 (234) 567-890</span>
+              </a>
+              <div className="font-body text-sm text-gray-400 flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-[#D4AF37] mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                <span>San Francisco, CA<br />United States</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-white/5">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="font-body text-xs text-gray-500">
+              © {new Date().getFullYear()} Capital V Solutions. All rights reserved.
+            </p>
+            
+            <div className="flex items-center gap-8">
+              <a
+                href="#"
+                className="font-body text-xs text-gray-500 hover:text-gray-300 transition-colors duration-300"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="#"
+                className="font-body text-xs text-gray-500 hover:text-gray-300 transition-colors duration-300"
+              >
+                Terms of Service
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ import { TechStackMarquee } from "@/components/TechStackMarquee";
 import { Partners } from "@/components/Partners";
 import { CTA } from "@/components/CTA";
 import { Footer } from "@/components/Footer";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Partners />
       <CTA />
       <Footer />
+      <ScrollToTop />
     </main>
   );
 }
