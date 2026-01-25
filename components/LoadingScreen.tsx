@@ -39,15 +39,15 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-[#D4AF37]/8 via-[#D4AF37]/3 to-transparent rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 flex flex-col items-center gap-8">
+      <div className="relative z-10 flex flex-col items-center gap-6 md:gap-8 px-4">
         {/* Logo and text */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex items-center gap-3"
+          className="flex items-center gap-2 md:gap-3 flex-wrap justify-center"
         >
-          <span className="font-heading text-5xl md:text-6xl font-bold tracking-tight text-[#0F0F0F]">
+          <span className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#0F0F0F]">
             Capital
           </span>
           
@@ -73,7 +73,7 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
                 repeat: Infinity,
                 repeatType: "reverse"
               }}
-              className="relative w-12 h-12 md:w-14 md:h-14"
+              className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37] to-[#B8860B] rounded-lg blur-md opacity-40" />
               <Image
@@ -86,7 +86,7 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
             </motion.div>
           </motion.div>
           
-          <span className="font-heading text-5xl md:text-6xl font-bold tracking-tight text-[#0F0F0F]">
+          <span className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#0F0F0F]">
             Solutions
           </span>
         </motion.div>
@@ -96,7 +96,7 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="w-64 md:w-80 space-y-2"
+          className="w-full max-w-[16rem] sm:max-w-[18rem] md:max-w-[20rem] space-y-2"
         >
           <div className="h-1 bg-gray-200 rounded-full overflow-hidden backdrop-blur-xl">
             <motion.div
@@ -109,7 +109,7 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
             </motion.div>
           </div>
           
-          <p className="text-center font-body text-xs text-gray-400 tracking-wider">
+          <p className="text-center font-body text-[10px] sm:text-xs text-gray-400 tracking-wider">
             Loading Experience
           </p>
         </motion.div>

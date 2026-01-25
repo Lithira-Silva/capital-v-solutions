@@ -10,15 +10,6 @@ export function ClientLayout({
   children: React.ReactNode;
 }) {
   const [isLoading, setIsLoading] = useState(true);
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) {
-    return null;
-  }
 
   return (
     <>
@@ -27,9 +18,7 @@ export function ClientLayout({
           <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
         )}
       </AnimatePresence>
-      <div style={{ display: isLoading ? 'none' : 'block' }}>
-        {children}
-      </div>
+      {!isLoading && children}
     </>
   );
 }
