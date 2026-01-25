@@ -174,7 +174,7 @@ export function Hero() {
                     disableRemotePlayback
                     className="w-full h-full object-cover"
                     style={{
-                      imageRendering: 'high-quality',
+                      imageRendering: 'auto',
                       transform: 'scale(1.12)',
                       backfaceVisibility: 'hidden',
                       WebkitBackfaceVisibility: 'hidden',
