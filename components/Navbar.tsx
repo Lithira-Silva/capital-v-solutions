@@ -56,10 +56,10 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out bg-white border-b",
         isScrolled
-          ? "bg-white/95 backdrop-blur-xl shadow-[0_1px_0_0_rgba(0,0,0,0.04)]"
-          : "bg-white/80 backdrop-blur-md"
+          ? "shadow-[0_4px_20px_rgba(0,0,0,0.08)] border-black/10"
+          : "shadow-sm border-black/[0.06]"
       )}
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -82,7 +82,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav - Centered */}
-          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-2 bg-white/60 backdrop-blur-lg px-3 py-1.5 rounded-full border border-black/[0.08] shadow-[0_2px_16px_rgba(0,0,0,0.06)]">
+          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-2 bg-[#FAF9F6] px-3 py-1.5 rounded-full border border-black/10 shadow-[0_2px_12px_rgba(0,0,0,0.08)]">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -90,8 +90,8 @@ export function Navbar() {
                 className={cn(
                   "relative px-4 py-2 font-body text-[13px] font-medium transition-all duration-300 cursor-pointer rounded-full",
                   activeSection === link.id
-                    ? "text-[#0F0F0F] bg-white shadow-[0_1px_3px_rgba(0,0,0,0.08),inset_0_0_0_1px_rgba(212,175,55,0.3)]"
-                    : "text-[#0F0F0F]/65 hover:text-[#0F0F0F] hover:bg-white/60"
+                    ? "text-[#0F0F0F] bg-white shadow-[0_1px_4px_rgba(0,0,0,0.1),inset_0_0_0_1px_rgba(212,175,55,0.3)]"
+                    : "text-[#0F0F0F]/65 hover:text-[#0F0F0F] hover:bg-white/80"
                 )}
               >
                 {link.name}

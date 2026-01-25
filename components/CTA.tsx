@@ -48,7 +48,7 @@ export function CTA() {
               <Button 
                 variant="brand" 
                 size="lg" 
-                className="group font-body rounded-2xl bg-[#A61C26] px-10 py-6 text-base font-semibold text-white hover:bg-[#8C151F] ring-1 ring-white/20 hover:ring-white/30 hover:-translate-y-1 transition-all duration-500 flex items-center justify-center gap-3"
+                className="btn-shimmer group font-body rounded-2xl bg-[#A61C26] px-10 py-6 text-base font-semibold text-white hover:bg-[#8C151F] ring-1 ring-white/20 hover:ring-white/30 hover:-translate-y-1 transition-all duration-500 flex items-center justify-center gap-3"
               >
                 <Calendar className="w-5 h-5 group-hover:scale-110 transition-transform" strokeWidth={2} />
                 Schedule a Discovery Call
@@ -56,7 +56,7 @@ export function CTA() {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="group font-body rounded-2xl border-2 border-[#D4AF37]/50 bg-transparent text-[#0F0F0F] font-semibold hover:bg-[#D4AF37] hover:text-white hover:border-[#D4AF37] px-10 py-6 text-base shadow-[0_8px_30px_rgba(212,175,55,0.2)] hover:shadow-[0_12px_40px_rgba(212,175,55,0.4)] hover:-translate-y-1 transition-all duration-500 flex items-center justify-center gap-3"
+                className="btn-shimmer group font-body rounded-2xl border-2 border-[#D4AF37]/50 bg-transparent text-[#0F0F0F] font-semibold hover:bg-[#D4AF37] hover:text-white hover:border-[#D4AF37] px-10 py-6 text-base shadow-[0_8px_30px_rgba(212,175,55,0.2)] hover:shadow-[0_12px_40px_rgba(212,175,55,0.4)] hover:-translate-y-1 transition-all duration-500 flex items-center justify-center gap-3"
               >
                 <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" strokeWidth={2} />
                 Contact Us

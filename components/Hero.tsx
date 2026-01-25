@@ -93,7 +93,7 @@ export function Hero() {
                 variant="brand" 
                 size="lg" 
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="font-body rounded-full bg-[#A61C26] px-8 py-6 text-base font-medium text-white hover:bg-[#8C151F] ring-1 ring-white/20 transition-all"
+                className="btn-shimmer font-body rounded-full bg-[#A61C26] px-8 py-6 text-base font-medium text-white hover:bg-[#8C151F] ring-1 ring-white/20 transition-all"
               >
                 Talk to an Expert
               </Button>
@@ -101,7 +101,7 @@ export function Hero() {
                 variant="brand-outline"
                 size="lg"
                 onClick={() => document.getElementById('approach')?.scrollIntoView({ behavior: 'smooth' })}
-                className="font-body rounded-full border border-[#D4AF37]/50 text-[#0F0F0F] px-8 py-6 text-base font-medium hover:bg-[#D4AF37]/5 hover:border-[#D4AF37] transition-all group"
+                className="btn-shimmer font-body rounded-full border border-[#D4AF37]/50 text-[#0F0F0F] px-8 py-6 text-base font-medium hover:bg-[#D4AF37]/5 hover:border-[#D4AF37] transition-all group"
               >
                 View Our Approach
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
