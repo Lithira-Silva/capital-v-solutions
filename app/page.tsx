@@ -9,6 +9,7 @@ import { Partners } from "@/components/Partners";
 import { CTA } from "@/components/CTA";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { ScrollProgress } from "@/components/ScrollProgress";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <CTA />
       <Footer />
       <ScrollToTop />
+      <ScrollProgress />
     </main>
   );
 }
