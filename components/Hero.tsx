@@ -150,9 +150,9 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="relative hidden lg:block"
+            className="relative hidden lg:flex lg:flex-col lg:gap-6"
           >
-            <div className="relative w-full aspect-[4/5] max-w-[550px] ml-auto">
+            <div className="relative w-full aspect-video max-w-[550px] ml-auto">
               {/* Decorative background elements */}
               <motion.div 
                 className="absolute -inset-4 bg-gradient-to-br from-[#D4AF37]/15 via-[#D4AF37]/5 to-transparent rounded-[2rem] blur-2xl -z-10 will-change-[transform,opacity]"
@@ -163,49 +163,31 @@ export function Hero() {
               {/* Main frame with enhanced styling */}
               <div className="absolute inset-0 rounded-[1.5rem] border-2 border-white/60 overflow-hidden bg-gradient-to-br from-white via-[#FFFEF9] to-[#FAF9F6] shadow-[0_30px_80px_rgba(0,0,0,0.12),0_0_0_1px_rgba(212,175,55,0.1)]">
                 {/* Hero Video */}
-                <div className="relative w-full h-full">
+                <div className="relative w-full h-full bg-gradient-to-br from-[#0F0F0F]/5 via-transparent to-transparent overflow-hidden">
                   <video
                     autoPlay
                     loop
                     muted
                     playsInline
+                    preload="auto"
+                    disablePictureInPicture
+                    disableRemotePlayback
                     className="w-full h-full object-cover"
+                    style={{
+                      imageRendering: 'high-quality',
+                      transform: 'scale(1.12)',
+                      backfaceVisibility: 'hidden',
+                      WebkitBackfaceVisibility: 'hidden',
+                      filter: 'none',
+                    }}
                   >
-                    <source src="/videos/Digital_Network_Data_Flow_Video.mp4" type="video/mp4" />
+                    <source src="/videos/Cinematic_AI_Globe_Generation.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                   {/* Enhanced overlay with vignette */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F]/8 via-transparent to-[#0F0F0F]/3" />
                   <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(15,15,15,0.03)_100%)]" />
                 </div>
-
-                {/* Premium stats overlay with enhanced design */}
-                <motion.div 
-                  className="absolute bottom-6 left-6 right-6 bg-gradient-to-br from-white/98 via-[#FFFEF9]/95 to-white/90 backdrop-blur-2xl rounded-2xl border-2 border-[#D4AF37]/30 p-7 shadow-[0_12px_40px_rgba(212,175,55,0.25),0_0_0_1px_rgba(255,255,255,0.5)_inset]"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                >
-                  <div className="flex items-center justify-around gap-6">
-                    <motion.div 
-                      className="flex flex-col gap-2.5 text-center flex-1"
-                      whileHover={{ scale: 1.08, y: -2 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                    >
-                      <div className="text-2xl lg:text-3xl font-heading font-bold bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C9A032] bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(212,175,55,0.3)]">99.9%</div>
-                      <div className="font-body text-[10px] font-semibold text-[#0F0F0F]/65 tracking-[0.2em] uppercase">Uptime</div>
-                    </motion.div>
-                    <div className="h-16 w-[2px] bg-gradient-to-b from-transparent via-[#D4AF37]/50 to-transparent"></div>
-                    <motion.div 
-                      className="flex flex-col gap-2.5 text-center flex-1"
-                      whileHover={{ scale: 1.08, y: -2 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                    >
-                      <div className="text-2xl lg:text-3xl font-heading font-bold bg-gradient-to-r from-[#A61C26] via-[#B22222] to-[#A61C26] bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(166,28,38,0.3)]">24/7</div>
-                      <div className="font-body text-[10px] font-semibold text-[#0F0F0F]/65 tracking-[0.2em] uppercase">Support</div>
-                    </motion.div>
-                  </div>
-                </motion.div>
               </div>
 
               {/* Floating accent elements */}
@@ -220,6 +202,34 @@ export function Hero() {
                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               />
             </div>
+
+            {/* Premium stats below video */}
+            <motion.div 
+              className="w-full max-w-[550px] ml-auto bg-gradient-to-br from-white/98 via-[#FFFEF9]/95 to-white/90 backdrop-blur-2xl rounded-2xl border-2 border-[#D4AF37]/30 p-7 shadow-[0_12px_40px_rgba(212,175,55,0.25),0_0_0_1px_rgba(255,255,255,0.5)_inset]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <div className="flex items-center justify-around gap-6">
+                <motion.div 
+                  className="flex flex-col gap-2.5 text-center flex-1"
+                  whileHover={{ scale: 1.08, y: -2 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                >
+                  <div className="text-2xl lg:text-3xl font-heading font-bold bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C9A032] bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(212,175,55,0.3)]">99.9%</div>
+                  <div className="font-body text-[10px] font-semibold text-[#0F0F0F]/65 tracking-[0.2em] uppercase">Uptime</div>
+                </motion.div>
+                <div className="h-16 w-[2px] bg-gradient-to-b from-transparent via-[#D4AF37]/50 to-transparent"></div>
+                <motion.div 
+                  className="flex flex-col gap-2.5 text-center flex-1"
+                  whileHover={{ scale: 1.08, y: -2 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                >
+                  <div className="text-2xl lg:text-3xl font-heading font-bold bg-gradient-to-r from-[#A61C26] via-[#B22222] to-[#A61C26] bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(166,28,38,0.3)]">24/7</div>
+                  <div className="font-body text-[10px] font-semibold text-[#0F0F0F]/65 tracking-[0.2em] uppercase">Support</div>
+                </motion.div>
+              </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>
