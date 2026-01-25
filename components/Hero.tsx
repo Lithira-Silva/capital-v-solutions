@@ -18,7 +18,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden bg-[#FAF9F6]"
+      className="relative min-h-screen flex items-center pt-8 pb-16 md:pt-12 md:pb-20 overflow-hidden bg-[#FAF9F6]"
     >
       {/* Minimal Background Elements */}
       <motion.div className="absolute inset-0 z-0" style={{ opacity }}>

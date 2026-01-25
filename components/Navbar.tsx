@@ -58,17 +58,17 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out",
         isScrolled
-          ? "bg-white/98 md:bg-white/85 md:backdrop-blur-2xl shadow-[0_1px_0_0_rgba(0,0,0,0.05)] border-b border-black/[0.06]"
-          : "bg-white md:bg-white/70 md:backdrop-blur-xl border-b border-black/[0.03]"
+          ? "bg-white/95 backdrop-blur-xl shadow-[0_1px_0_0_rgba(0,0,0,0.04)]"
+          : "bg-white/80 backdrop-blur-md"
       )}
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[52px]">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group relative z-10">
-            <span className="text-lg md:text-xl font-heading font-semibold tracking-tight text-[#0F0F0F] flex items-center gap-1.5 transition-colors duration-300 group-hover:text-[#0F0F0F]/80">
+            <span className="text-xl font-heading font-semibold tracking-tight text-[#0F0F0F] flex items-center gap-1.5 transition-all duration-300 group-hover:opacity-80">
               Capital{" "}
-              <span className="relative inline-flex items-center justify-center w-7 h-7 transition-transform duration-300 group-hover:scale-105">
+              <span className="relative inline-flex items-center justify-center w-7 h-7 transition-transform duration-300 group-hover:scale-110">
                 <Image
                   src="/logo.png.PNG"
                   alt="V"
@@ -81,8 +81,8 @@ export function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-1">
+          {/* Desktop Nav - Centered */}
+          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-2 bg-white/60 backdrop-blur-lg px-3 py-1.5 rounded-full border border-black/[0.08] shadow-[0_2px_16px_rgba(0,0,0,0.06)]">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -90,21 +90,13 @@ export function Navbar() {
                 className={cn(
                   "relative px-4 py-2 font-body text-[13px] font-medium transition-all duration-300 cursor-pointer rounded-full",
                   activeSection === link.id
-                    ? "text-[#0F0F0F] bg-gradient-to-br from-[#D4AF37]/10 to-[#D4AF37]/5 shadow-[inset_0_0_0_1px_rgba(212,175,55,0.2)]"
-                    : "text-[#0F0F0F]/70 hover:text-[#0F0F0F] hover:bg-black/[0.03]"
+                    ? "text-[#0F0F0F] bg-white shadow-[0_1px_3px_rgba(0,0,0,0.08),inset_0_0_0_1px_rgba(212,175,55,0.3)]"
+                    : "text-[#0F0F0F]/65 hover:text-[#0F0F0F] hover:bg-white/60"
                 )}
               >
                 {link.name}
               </a>
             ))}
-            <div className="ml-4 pl-4 border-l border-black/[0.08]">
-              <Button 
-                variant="brand" 
-                className="rounded-full px-5 py-1.5 h-auto bg-gradient-to-b from-[#B22222] to-[#9B1C1C] hover:from-[#A61C26] hover:to-[#8C151F] text-white text-[13px] font-medium shadow-[0_2px_8px_rgba(178,34,34,0.3)] hover:shadow-[0_4px_12px_rgba(178,34,34,0.4)] transition-all duration-300 hover:-translate-y-[1px]"
-              >
-                Get Started
-              </Button>
-            </div>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -137,14 +129,6 @@ export function Navbar() {
                 {link.name}
               </a>
             ))}
-            <div className="pt-3 mt-3 border-t border-black/[0.06]">
-              <Button 
-                variant="brand" 
-                className="w-full rounded-full px-5 py-2.5 h-auto bg-gradient-to-b from-[#B22222] to-[#9B1C1C] hover:from-[#A61C26] hover:to-[#8C151F] text-white text-sm font-medium shadow-[0_2px_8px_rgba(178,34,34,0.3)] transition-all duration-300"
-              >
-                Get Started
-              </Button>
-            </div>
           </div>
         </div>
       )}
