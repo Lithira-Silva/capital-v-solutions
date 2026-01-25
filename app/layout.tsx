@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { ClientLayout } from "@/components/ClientLayout";
 
 const headingFont = Space_Grotesk({
   subsets: ["latin"],
@@ -33,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={cn(headingFont.variable, bodyFont.variable, "min-h-screen bg-brand-light dark:bg-brand-dark antialiased font-body")}>
-        {children}
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
