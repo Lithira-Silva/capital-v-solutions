@@ -57,7 +57,7 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out bg-white border-b",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out bg-gradient-to-b from-[#FDFCF9] via-[#FEFEFE] to-white/95 backdrop-blur-sm border-b",
         isScrolled
           ? "shadow-[0_4px_20px_rgba(0,0,0,0.08)] border-black/10"
           : "shadow-sm border-black/[0.06]"

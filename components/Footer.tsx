@@ -12,7 +12,7 @@ export function Footer() {
       </div>
 
       <div className="relative z-10 max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 py-16">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+        <div className="grid md:grid-cols-2 gap-12 mb-12">
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center gap-2">
@@ -57,33 +57,6 @@ export function Footer() {
                 </a>
               ))}
             </nav>
-          </div>
-
-          {/* Contact Info */}
-          <div className="space-y-6">
-            <h3 className="font-heading text-sm font-semibold tracking-wider text-[#D4AF37] uppercase">
-              Get in Touch
-            </h3>
-            <div className="flex flex-col gap-4">
-              <a
-                href="mailto:contact@capitalvsolutions.com"
-                className="font-body text-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center gap-3 group"
-              >
-                <Mail className="w-4 h-4 text-[#D4AF37] group-hover:text-[#FCF6BA] transition-colors" strokeWidth={1.5} />
-                <span>contact@capitalvsolutions.com</span>
-              </a>
-              <a
-                href="tel:+1234567890"
-                className="font-body text-sm text-gray-400 hover:text-white transition-colors duration-300 flex items-center gap-3 group"
-              >
-                <Phone className="w-4 h-4 text-[#D4AF37] group-hover:text-[#FCF6BA] transition-colors" strokeWidth={1.5} />
-                <span>+1 (234) 567-890</span>
-              </a>
-              <div className="font-body text-sm text-gray-400 flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#D4AF37] mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                <span>San Francisco, CA<br />United States</span>
-              </div>
-            </div>
           </div>
         </div>
 
