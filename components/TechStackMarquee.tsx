@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { memo } from "react";
 
 // Logo data - You can replace these with actual logo URLs
 const logos = [
@@ -17,7 +19,7 @@ const logos = [
 // Duplicate the logos for seamless infinite scroll
 const allLogos = [...logos, ...logos];
 
-export function TechStackMarquee() {
+export const TechStackMarquee = memo(function TechStackMarquee() {
   return (
     <section id="tech" className="relative py-20 bg-gradient-to-b from-[#FAF9F6] via-[#FFFEF9] to-[#FAF9F6] overflow-hidden">
       {/* Premium Background Elements */}
@@ -61,7 +63,7 @@ export function TechStackMarquee() {
 
           <div className="overflow-hidden">
             <motion.div
-              className="flex gap-16"
+              className="flex gap-16 will-change-transform"
               animate={{
                 x: [0, -50 + "%"],
               }}
@@ -81,21 +83,15 @@ export function TechStackMarquee() {
                 >
                   <div className="relative w-32 h-32 flex items-center justify-center">
                     {/* Logo Container */}
-                    <div className="relative w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
-                      <img
+                    <div className="relative w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110 will-change-transform">
+                      <Image
                         src={logo.url}
                         alt={logo.name}
-                        className="w-20 h-20 object-contain grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
-                        style={{
-                          filter: "grayscale(100%)",
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.filter = "none";
-                          e.currentTarget.style.filter = "drop-shadow(0 0 20px rgba(191, 149, 63, 0.6))";
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.filter = "grayscale(100%)";
-                        }}
+                        width={80}
+                        height={80}
+                        className="object-contain grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-hover:logo-hover-glow transition-all duration-500 will-change-[filter,opacity]"
+                        loading="lazy"
+                        unoptimized
                       />
                     </div>
 
@@ -129,4 +125,4 @@ export function TechStackMarquee() {
       </div>
     </section>
   );
-}
+});

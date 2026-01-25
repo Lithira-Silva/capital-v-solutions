@@ -64,8 +64,7 @@ export function CaseStudyCarousel() {
           >
             Recent{" "}
             <span 
-              className="text-transparent bg-clip-text bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#B8860B]"
-              style={{ textShadow: '0 2px 8px rgba(212, 175, 55, 0.3)' }}
+              className="text-transparent bg-clip-text bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#B8860B] gold-text-glow"
             >
               Victories
             </span>

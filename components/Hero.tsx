@@ -29,12 +29,12 @@ export function Hero() {
         
         {/* Floating gradient orbs */}
         <motion.div 
-          className="absolute top-20 right-20 w-[600px] h-[600px] bg-gradient-to-br from-[#D4AF37]/10 via-[#D4AF37]/4 to-transparent rounded-full blur-3xl"
+          className="absolute top-20 right-20 w-[600px] h-[600px] bg-gradient-to-br from-[#D4AF37]/10 via-[#D4AF37]/4 to-transparent rounded-full blur-3xl will-change-[transform,opacity]"
           animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.7, 0.5] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div 
-          className="absolute bottom-20 left-20 w-[500px] h-[500px] bg-gradient-to-tl from-[#A61C26]/8 via-[#A61C26]/3 to-transparent rounded-full blur-3xl"
+          className="absolute bottom-20 left-20 w-[500px] h-[500px] bg-gradient-to-tl from-[#A61C26]/8 via-[#A61C26]/3 to-transparent rounded-full blur-3xl will-change-[transform,opacity]"
           animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.6, 0.4] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         />
@@ -78,14 +78,11 @@ export function Hero() {
               Build technology that{" "}
               <span className="inline-block relative">
                 <span 
-                  className="relative text-transparent bg-clip-text bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C9A032]"
-                  style={{
-                    textShadow: '0 3px 12px rgba(212, 175, 55, 0.4)',
-                  }}
+                  className="relative text-transparent bg-clip-text bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C9A032] gold-text-glow"
                 >
                   powers
                   <motion.span
-                    className="absolute -inset-1 bg-gradient-to-r from-[#D4AF37]/20 via-[#D4AF37]/10 to-[#D4AF37]/20 blur-2xl -z-10"
+                    className="absolute -inset-1 bg-gradient-to-r from-[#D4AF37]/20 via-[#D4AF37]/10 to-[#D4AF37]/20 blur-2xl -z-10 will-change-[opacity]"
                     animate={{ opacity: [0.3, 0.6, 0.3] }}
                     transition={{ duration: 3, repeat: Infinity }}
                   />
@@ -158,7 +155,7 @@ export function Hero() {
             <div className="relative w-full aspect-[4/5] max-w-[550px] ml-auto">
               {/* Decorative background elements */}
               <motion.div 
-                className="absolute -inset-4 bg-gradient-to-br from-[#D4AF37]/15 via-[#D4AF37]/5 to-transparent rounded-[2rem] blur-2xl -z-10"
+                className="absolute -inset-4 bg-gradient-to-br from-[#D4AF37]/15 via-[#D4AF37]/5 to-transparent rounded-[2rem] blur-2xl -z-10 will-change-[transform,opacity]"
                 animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.05, 1] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               />
@@ -213,12 +210,12 @@ export function Hero() {
 
               {/* Floating accent elements */}
               <motion.div 
-                className="absolute -z-10 top-10 -right-10 w-40 h-40 bg-gradient-to-br from-[#D4AF37]/15 to-transparent rounded-full blur-2xl"
+                className="absolute -z-10 top-10 -right-10 w-40 h-40 bg-gradient-to-br from-[#D4AF37]/15 to-transparent rounded-full blur-2xl will-change-[transform,opacity]"
                 animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.7, 0.4] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
               <motion.div 
-                className="absolute -z-10 bottom-10 -left-10 w-40 h-40 bg-gradient-to-tl from-[#A61C26]/12 to-transparent rounded-full blur-2xl"
+                className="absolute -z-10 bottom-10 -left-10 w-40 h-40 bg-gradient-to-tl from-[#A61C26]/12 to-transparent rounded-full blur-2xl will-change-[transform,opacity]"
                 animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.6, 0.3] }}
                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               />

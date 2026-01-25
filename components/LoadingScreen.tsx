@@ -2,13 +2,13 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 
 interface LoadingScreenProps {
   onLoadingComplete: () => void;
 }
 
-export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
+export const LoadingScreen = memo(function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -17,12 +17,12 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(timer);
-          setTimeout(() => onLoadingComplete(), 300);
+          setTimeout(() => onLoadingComplete(), 200);
           return 100;
         }
-        return prev + 2;
+        return prev + 4; // Faster increment for quicker loading
       });
-    }, 30);
+    }, 20); // Reduced interval for faster updates
 
     return () => clearInterval(timer);
   }, [onLoadingComplete]);
@@ -103,7 +103,7 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
               initial={{ width: "0%" }}
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.3 }}
-              className="h-full bg-gradient-to-r from-[#D4AF37] via-[#FCF6BA] to-[#D4AF37] rounded-full relative"
+              className="h-full bg-gradient-to-r from-[#D4AF37] via-[#FCF6BA] to-[#D4AF37] rounded-full relative will-change-[width]"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-shimmer" />
             </motion.div>
@@ -116,4 +116,4 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
       </div>
     </motion.div>
   );
-}
+});

@@ -1,49 +1,50 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, throttle } from "@/lib/utils";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+  const handleScroll = useCallback(() => {
+    setIsScrolled(window.scrollY > 10);
 
-      // Detect active section
-      const sections = ["pillars", "approach", "tech", "contact"];
-      const scrollPosition = window.scrollY + 100;
+    // Detect active section
+    const sections = ["pillars", "approach", "tech", "contact"];
+    const scrollPosition = window.scrollY + 100;
 
-      // Check if at top of page
-      if (window.scrollY < 100) {
-        setActiveSection("");
-        return;
-      }
+    // Check if at top of page
+    if (window.scrollY < 100) {
+      setActiveSection("");
+      return;
+    }
 
-      for (const sectionId of sections) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
+    for (const sectionId of sections) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const offsetTop = element.offsetTop;
+        const offsetHeight = element.offsetHeight;
 
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(sectionId);
-            return;
-          }
+        if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          setActiveSection(sectionId);
+          return;
         }
       }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Call once on mount
-    return () => window.removeEventListener("scroll", handleScroll);
+    }
   }, []);
+
+  useEffect(() => {
+    const throttledScroll = throttle(handleScroll, 100);
+    window.addEventListener("scroll", throttledScroll, { passive: true });
+    handleScroll(); // Call once on mount
+    return () => window.removeEventListener("scroll", throttledScroll);
+  }, [handleScroll]);
 
   const navLinks = [
     { name: "Home", href: "#", id: "" },

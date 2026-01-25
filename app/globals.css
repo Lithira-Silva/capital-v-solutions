@@ -164,3 +164,12 @@ html {
   );
   animation: shimmer 3s infinite;
 }
+
+/* Performance Optimizations */
+.logo-hover-glow {
+  filter: drop-shadow(0 0 20px rgba(191, 149, 63, 0.6));
+}
+
+.gold-text-glow {
+  text-shadow: 0 3px 12px rgba(212, 175, 55, 0.4);
+}
