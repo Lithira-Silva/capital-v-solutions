@@ -19,7 +19,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center pt-8 pb-16 md:pt-12 md:pb-20 overflow-hidden bg-gradient-to-br from-white via-[#FEFDFB] to-[#FAF9F6]"
+      className="relative h-screen flex items-center pt-20 pb-12 md:pt-24 md:pb-16 overflow-hidden bg-gradient-to-br from-white via-[#FEFDFB] to-[#FAF9F6]"
     >
       {/* Premium Background Elements */}
       <motion.div className="absolute inset-0 z-0" style={{ opacity }}>
@@ -53,7 +53,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-2xl space-y-8"
+            className="max-w-2xl space-y-6"
           >
             {/* Premium Badge */}
             <motion.div
@@ -70,7 +70,7 @@ export function Hero() {
 
             {/* Hero Heading - Enhanced */}
             <motion.h1
-              className="font-heading text-5xl sm:text-6xl lg:text-[5rem] xl:text-[5.5rem] font-bold tracking-[-0.02em] text-[#0F0F0F] leading-[1.05]"
+              className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-[-0.02em] text-[#0F0F0F] leading-[1.1]"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
@@ -93,7 +93,7 @@ export function Hero() {
 
             {/* Description - Enhanced */}
             <motion.p
-              className="font-body text-lg lg:text-xl text-[#0F0F0F]/65 leading-[1.75] max-w-xl font-light"
+              className="font-body text-base lg:text-lg text-[#0F0F0F]/65 leading-[1.7] max-w-xl font-light"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
@@ -103,7 +103,7 @@ export function Hero() {
 
             {/* CTA Buttons - Premium */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 pt-4"
+              className="flex flex-col sm:flex-row gap-3 pt-2"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
@@ -112,7 +112,7 @@ export function Hero() {
                 variant="brand" 
                 size="lg" 
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="btn-shimmer font-body rounded-full bg-gradient-to-r from-[#A61C26] to-[#8C151F] px-10 py-6 text-base font-semibold text-white hover:from-[#8C151F] hover:to-[#A61C26] hover:shadow-[0_12px_40px_rgba(166,28,38,0.35)] hover:-translate-y-0.5 transition-all duration-500 shadow-[0_8px_30px_rgba(166,28,38,0.25)]"
+                className="btn-shimmer font-body rounded-full bg-gradient-to-r from-[#A61C26] to-[#8C151F] px-8 py-5 text-sm font-semibold text-white hover:from-[#8C151F] hover:to-[#A61C26] hover:shadow-[0_12px_40px_rgba(166,28,38,0.35)] hover:-translate-y-0.5 transition-all duration-500 shadow-[0_8px_30px_rgba(166,28,38,0.25)]"
               >
                 Talk to an Expert
               </Button>
@@ -120,7 +120,7 @@ export function Hero() {
                 variant="brand-outline"
                 size="lg"
                 onClick={() => document.getElementById('approach')?.scrollIntoView({ behavior: 'smooth' })}
-                className="btn-shimmer font-body rounded-full border-2 border-[#D4AF37]/40 bg-white/40 backdrop-blur-sm text-[#0F0F0F] px-10 py-6 text-base font-semibold hover:bg-[#D4AF37] hover:text-white hover:border-[#D4AF37] hover:shadow-[0_12px_40px_rgba(212,175,55,0.35)] hover:-translate-y-0.5 transition-all duration-500 shadow-[0_4px_20px_rgba(212,175,55,0.15)] group"
+                className="btn-shimmer font-body rounded-full border-2 border-[#D4AF37]/40 bg-white/40 backdrop-blur-sm text-[#0F0F0F] px-8 py-5 text-sm font-semibold hover:bg-[#D4AF37] hover:text-white hover:border-[#D4AF37] hover:shadow-[0_12px_40px_rgba(212,175,55,0.35)] hover:-translate-y-0.5 transition-all duration-500 shadow-[0_4px_20px_rgba(212,175,55,0.15)] group"
               >
                 View Our Approach
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -129,7 +129,7 @@ export function Hero() {
 
             {/* Trust indicators - Mobile only */}
             <motion.div
-              className="flex lg:hidden items-center gap-8 pt-10 mt-10"
+              className="flex lg:hidden items-center gap-6 pt-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}

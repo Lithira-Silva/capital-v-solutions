@@ -10,9 +10,9 @@ const logos = [
   { name: "Python", url: "https://cdn.worldvectorlogo.com/logos/python-5.svg" },
   { name: "Power BI", url: "https://cdn.worldvectorlogo.com/logos/power-bi.svg" },
   { name: "AWS", url: "https://cdn.worldvectorlogo.com/logos/aws-2.svg" },
-  { name: "React", url: "https://cdn.worldvectorlogo.com/logos/react-2.svg" },
+  { name: "React", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
   { name: "Node.js", url: "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" },
-  { name: "PostgreSQL", url: "https://cdn.worldvectorlogo.com/logos/postgresql.svg" },
+  { name: "PostgreSQL", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
   { name: "Docker", url: "https://cdn.worldvectorlogo.com/logos/docker.svg" },
 ];
 
@@ -65,7 +65,7 @@ export const TechStackMarquee = memo(function TechStackMarquee() {
             <motion.div
               className="flex gap-16 will-change-transform"
               animate={{
-                x: [0, -50 + "%"],
+                x: ["-50%", "-100%"],
               }}
               transition={{
                 x: {
@@ -75,6 +75,7 @@ export const TechStackMarquee = memo(function TechStackMarquee() {
                   ease: "linear",
                 },
               }}
+              style={{ x: "-50%" }}
             >
               {allLogos.map((logo, index) => (
                 <div
@@ -92,6 +93,9 @@ export const TechStackMarquee = memo(function TechStackMarquee() {
                         className="object-contain grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-hover:logo-hover-glow transition-all duration-500 will-change-[filter,opacity]"
                         loading="lazy"
                         unoptimized
+                        onError={(e) => {
+                          e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIiBmaWxsPSIjOTk5Ij5Mb2dvPC90ZXh0Pjwvc3ZnPg==';
+                        }}
                       />
                     </div>
 

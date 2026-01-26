@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 // Tech logos with real SVG icons (using CDN URLs for placeholder)
 const techLogos = [
@@ -26,7 +27,7 @@ const techLogos = [
   },
   { 
     name: "React", 
-    url: "https://cdn.worldvectorlogo.com/logos/react-2.svg",
+    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
   },
   { 
     name: "Docker", 
@@ -34,7 +35,7 @@ const techLogos = [
   },
   { 
     name: "PostgreSQL", 
-    url: "https://cdn.worldvectorlogo.com/logos/postgresql.svg",
+    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
   },
 ];
 
@@ -59,7 +60,7 @@ export function TechMarquee() {
           <motion.div
             className="flex gap-12 md:gap-16 lg:gap-20"
             animate={{
-              x: [0, "-33.333%"],
+              x: ["-33.333%", "-66.666%"],
             }}
             transition={{
               x: {
@@ -69,6 +70,7 @@ export function TechMarquee() {
                 ease: "linear",
               },
             }}
+            style={{ x: "-33.333%" }}
           >
             {allLogos.map((logo, index) => (
               <div
@@ -78,18 +80,16 @@ export function TechMarquee() {
                 <div className="relative w-24 h-24 md:w-32 md:h-32 flex items-center justify-center">
                   {/* Logo Container */}
                   <div className="relative w-full h-full flex items-center justify-center transition-all duration-500 group-hover:scale-110">
-                    <img
+                    <Image
                       src={logo.url}
                       alt={logo.name}
+                      width={80}
+                      height={80}
                       className="w-16 h-16 md:w-20 md:h-20 object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
-                      style={{
-                        filter: "grayscale(100%)",
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.filter = "drop-shadow(0 0 20px rgba(212, 175, 55, 0.5))";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.filter = "grayscale(100%)";
+                      unoptimized
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIiBmaWxsPSIjOTk5Ij5Mb2dvPC90ZXh0Pjwvc3ZnPg==';
                       }}
                     />
                   </div>
