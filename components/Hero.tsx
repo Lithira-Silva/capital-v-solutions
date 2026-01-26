@@ -19,7 +19,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen flex items-center pt-20 pb-12 md:pt-24 md:pb-16 overflow-hidden bg-gradient-to-br from-white via-[#FEFDFB] to-[#FAF9F6]"
+      className="relative min-h-screen flex items-center justify-center pt-20 pb-16 sm:pt-24 sm:pb-20 lg:pt-28 lg:pb-24 overflow-hidden bg-gradient-to-br from-white via-[#FEFDFB] to-[#FAF9F6]"
     >
       {/* Premium Background Elements */}
       <motion.div className="absolute inset-0 z-0" style={{ opacity }}>
@@ -43,9 +43,9 @@ export function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(15,15,15,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(15,15,15,0.015)_1px,transparent_1px)] bg-[size:80px_80px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_50%,black,transparent)]" />
       </motion.div>
 
-      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10 w-full">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 w-full">
         <motion.div
-          className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center"
+          className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 xl:gap-20 items-center"
           style={{ scale, y }}
         >
           {/* Left Content */}
@@ -53,24 +53,23 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-2xl space-y-6"
+            className="max-w-2xl space-y-4 sm:space-y-5 lg:space-y-6"
           >
-            {/* Premium Badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-gradient-to-r from-white/90 via-[#FFFEF9]/80 to-white/90 backdrop-blur-xl border border-[#D4AF37]/20 shadow-[0_4px_20px_rgba(212,175,55,0.15)]"
+              className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 lg:px-5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-white/90 via-[#FFFEF9]/80 to-white/90 backdrop-blur-xl border border-[#D4AF37]/20 shadow-[0_4px_20px_rgba(212,175,55,0.15)]"
             >
-              <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" strokeWidth={2} />
-              <span className="font-body text-[11px] font-semibold tracking-[0.25em] text-[#0F0F0F]/70 uppercase">
+              <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#D4AF37]" strokeWidth={2} />
+              <span className="font-body text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] sm:tracking-[0.25em] text-[#0F0F0F]/70 uppercase">
                 Enterprise Technology
               </span>
             </motion.div>
 
-            {/* Hero Heading - Enhanced */}
             <motion.h1
-              className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-[-0.02em] text-[#0F0F0F] leading-[1.1]"
+              className="font-heading font-bold tracking-[-0.02em] text-[#0F0F0F] leading-[1.1]"
+              style={{ fontSize: 'clamp(2rem, 5vw + 1rem, 4.5rem)' }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
@@ -91,9 +90,9 @@ export function Hero() {
               your business
             </motion.h1>
 
-            {/* Description - Enhanced */}
             <motion.p
-              className="font-body text-base lg:text-lg text-[#0F0F0F]/65 leading-[1.7] max-w-xl font-light"
+              className="font-body text-[#0F0F0F]/65 leading-[1.7] max-w-xl font-light"
+              style={{ fontSize: 'clamp(0.938rem, 0.5vw + 0.875rem, 1.125rem)' }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
@@ -101,9 +100,8 @@ export function Hero() {
               Capital V Solutions helps enterprises design robust platforms, intelligent data foundations, and AI-driven automation that transform business operations.
             </motion.p>
 
-            {/* CTA Buttons - Premium */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-3 pt-2"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
@@ -112,7 +110,7 @@ export function Hero() {
                 variant="brand" 
                 size="lg" 
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="btn-shimmer font-body rounded-full bg-gradient-to-r from-[#A61C26] to-[#8C151F] px-8 py-5 text-sm font-semibold text-white hover:from-[#8C151F] hover:to-[#A61C26] hover:shadow-[0_12px_40px_rgba(166,28,38,0.35)] hover:-translate-y-0.5 transition-all duration-500 shadow-[0_8px_30px_rgba(166,28,38,0.25)]"
+                className="btn-shimmer font-body rounded-full bg-gradient-to-r from-[#A61C26] to-[#8C151F] px-6 sm:px-8 lg:px-10 py-4 sm:py-5 lg:py-6 text-sm sm:text-base font-semibold text-white hover:from-[#8C151F] hover:to-[#A61C26] hover:shadow-[0_12px_40px_rgba(166,28,38,0.35)] hover:-translate-y-0.5 transition-all duration-500 shadow-[0_8px_30px_rgba(166,28,38,0.25)]"
               >
                 Talk to an Expert
               </Button>
@@ -120,39 +118,37 @@ export function Hero() {
                 variant="brand-outline"
                 size="lg"
                 onClick={() => document.getElementById('approach')?.scrollIntoView({ behavior: 'smooth' })}
-                className="btn-shimmer font-body rounded-full border-2 border-[#D4AF37]/40 bg-white/40 backdrop-blur-sm text-[#0F0F0F] px-8 py-5 text-sm font-semibold hover:bg-[#D4AF37] hover:text-white hover:border-[#D4AF37] hover:shadow-[0_12px_40px_rgba(212,175,55,0.35)] hover:-translate-y-0.5 transition-all duration-500 shadow-[0_4px_20px_rgba(212,175,55,0.15)] group"
+                className="btn-shimmer font-body rounded-full border-2 border-[#D4AF37]/40 bg-white/40 backdrop-blur-sm text-[#0F0F0F] px-6 sm:px-8 lg:px-10 py-4 sm:py-5 lg:py-6 text-sm sm:text-base font-semibold hover:bg-[#D4AF37] hover:text-white hover:border-[#D4AF37] hover:shadow-[0_12px_40px_rgba(212,175,55,0.35)] hover:-translate-y-0.5 transition-all duration-500 shadow-[0_4px_20px_rgba(212,175,55,0.15)] group"
               >
                 View Our Approach
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </motion.div>
 
-            {/* Trust indicators - Mobile only */}
             <motion.div
-              className="flex lg:hidden items-center gap-6 pt-6"
+              className="flex lg:hidden items-center gap-4 sm:gap-6 pt-4 sm:pt-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <div className="flex-1 flex flex-col gap-2 items-center p-6 rounded-2xl bg-gradient-to-br from-white/90 to-[#FFFEF9]/80 backdrop-blur-xl border border-[#D4AF37]/15 shadow-[0_4px_20px_rgba(212,175,55,0.1)]">
-                <div className="text-3xl font-heading font-bold bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C9A032] bg-clip-text text-transparent">99.9%</div>
-                <div className="font-body text-[10px] font-semibold text-[#0F0F0F]/60 tracking-widest uppercase">Uptime</div>
+              <div className="flex-1 flex flex-col gap-1.5 sm:gap-2 items-center p-4 sm:p-6 rounded-2xl bg-gradient-to-br from-white/90 to-[#FFFEF9]/80 backdrop-blur-xl border border-[#D4AF37]/15 shadow-[0_4px_20px_rgba(212,175,55,0.1)]">
+                <div className="text-2xl sm:text-3xl font-heading font-bold bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C9A032] bg-clip-text text-transparent">99.9%</div>
+                <div className="font-body text-[9px] sm:text-[10px] font-semibold text-[#0F0F0F]/60 tracking-widest uppercase">Uptime</div>
               </div>
-              <div className="flex-1 flex flex-col gap-2 items-center p-6 rounded-2xl bg-gradient-to-br from-white/90 to-[#FFFEF9]/80 backdrop-blur-xl border border-[#A61C26]/15 shadow-[0_4px_20px_rgba(166,28,38,0.1)]">
-                <div className="text-3xl font-heading font-bold bg-gradient-to-r from-[#A61C26] via-[#B22222] to-[#A61C26] bg-clip-text text-transparent">24/7</div>
-                <div className="font-body text-[10px] font-semibold text-[#0F0F0F]/60 tracking-widest uppercase">Support</div>
+              <div className="flex-1 flex flex-col gap-1.5 sm:gap-2 items-center p-4 sm:p-6 rounded-2xl bg-gradient-to-br from-white/90 to-[#FFFEF9]/80 backdrop-blur-xl border border-[#A61C26]/15 shadow-[0_4px_20px_rgba(166,28,38,0.1)]">
+                <div className="text-2xl sm:text-3xl font-heading font-bold bg-gradient-to-r from-[#A61C26] via-[#B22222] to-[#A61C26] bg-clip-text text-transparent">24/7</div>
+                <div className="font-body text-[9px] sm:text-[10px] font-semibold text-[#0F0F0F]/60 tracking-widest uppercase">Support</div>
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Right Premium Hero Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="relative hidden lg:flex lg:flex-col lg:gap-6"
+            className="relative hidden lg:flex lg:flex-col lg:gap-4 xl:gap-6"
           >
-            <div className="relative w-full aspect-video max-w-[550px] ml-auto">
+            <div className="relative w-full aspect-video max-w-[500px] xl:max-w-[550px] ml-auto">
               {/* Decorative background elements */}
               <motion.div 
                 className="absolute -inset-4 bg-gradient-to-br from-[#D4AF37]/15 via-[#D4AF37]/5 to-transparent rounded-[2rem] blur-2xl -z-10 will-change-[transform,opacity]"
@@ -203,29 +199,28 @@ export function Hero() {
               />
             </div>
 
-            {/* Premium stats below video */}
             <motion.div 
-              className="w-full max-w-[550px] ml-auto bg-gradient-to-br from-white/98 via-[#FFFEF9]/95 to-white/90 backdrop-blur-2xl rounded-2xl border-2 border-[#D4AF37]/30 p-7 shadow-[0_12px_40px_rgba(212,175,55,0.25),0_0_0_1px_rgba(255,255,255,0.5)_inset]"
+              className="w-full max-w-[500px] xl:max-w-[550px] ml-auto bg-gradient-to-br from-white/98 via-[#FFFEF9]/95 to-white/90 backdrop-blur-2xl rounded-2xl border-2 border-[#D4AF37]/30 p-5 lg:p-6 xl:p-7 shadow-[0_12px_40px_rgba(212,175,55,0.25),0_0_0_1px_rgba(255,255,255,0.5)_inset]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <div className="flex items-center justify-around gap-6">
+              <div className="flex items-center justify-around gap-4 lg:gap-6">
                 <motion.div 
-                  className="flex flex-col gap-2.5 text-center flex-1"
+                  className="flex flex-col gap-2 lg:gap-2.5 text-center flex-1"
                   whileHover={{ scale: 1.08, y: -2 }}
                   transition={{ type: "spring", stiffness: 400, damping: 15 }}
                 >
-                  <div className="text-2xl lg:text-3xl font-heading font-bold bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C9A032] bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(212,175,55,0.3)]">99.9%</div>
+                  <div className="text-2xl lg:text-2xl xl:text-3xl font-heading font-bold bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C9A032] bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(212,175,55,0.3)]">99.9%</div>
                   <div className="font-body text-[10px] font-semibold text-[#0F0F0F]/65 tracking-[0.2em] uppercase">Uptime</div>
                 </motion.div>
-                <div className="h-16 w-[2px] bg-gradient-to-b from-transparent via-[#D4AF37]/50 to-transparent"></div>
+                <div className="h-12 lg:h-16 w-[2px] bg-gradient-to-b from-transparent via-[#D4AF37]/50 to-transparent"></div>
                 <motion.div 
-                  className="flex flex-col gap-2.5 text-center flex-1"
+                  className="flex flex-col gap-2 lg:gap-2.5 text-center flex-1"
                   whileHover={{ scale: 1.08, y: -2 }}
                   transition={{ type: "spring", stiffness: 400, damping: 15 }}
                 >
-                  <div className="text-2xl lg:text-3xl font-heading font-bold bg-gradient-to-r from-[#A61C26] via-[#B22222] to-[#A61C26] bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(166,28,38,0.3)]">24/7</div>
+                  <div className="text-2xl lg:text-2xl xl:text-3xl font-heading font-bold bg-gradient-to-r from-[#A61C26] via-[#B22222] to-[#A61C26] bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(166,28,38,0.3)]">24/7</div>
                   <div className="font-body text-[10px] font-semibold text-[#0F0F0F]/65 tracking-[0.2em] uppercase">Support</div>
                 </motion.div>
               </div>
