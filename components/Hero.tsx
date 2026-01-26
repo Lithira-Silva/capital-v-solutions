@@ -3,10 +3,13 @@
 import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isVideoVisible, setIsVideoVisible] = useState(false);
+  
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
@@ -15,6 +18,31 @@ export function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.98]);
   const y = useTransform(scrollYProgress, [0, 0.5], [0, 50]);
+
+  // Intersection Observer for lazy video loading
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVideoVisible(true);
+            if (videoRef.current) {
+              videoRef.current.play().catch(() => {
+                // Autoplay failed, video will play when user interacts
+              });
+            }
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '50px' }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section
@@ -161,13 +189,15 @@ export function Hero() {
                 {/* Hero Video */}
                 <div className="relative w-full h-full bg-gradient-to-br from-[#0F0F0F]/5 via-transparent to-transparent overflow-hidden">
                   <video
+                    ref={videoRef}
                     autoPlay
                     loop
                     muted
                     playsInline
-                    preload="auto"
+                    preload="metadata"
                     disablePictureInPicture
                     disableRemotePlayback
+                    poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23f5f5f5' width='800' height='600'/%3E%3C/svg%3E"
                     className="w-full h-full object-cover"
                     style={{
                       imageRendering: 'auto',
@@ -175,9 +205,12 @@ export function Hero() {
                       backfaceVisibility: 'hidden',
                       WebkitBackfaceVisibility: 'hidden',
                       filter: 'none',
+                      willChange: 'transform',
                     }}
                   >
-                    <source src="/videos/Cinematic_AI_Globe_Generation.mp4" type="video/mp4" />
+                    {isVideoVisible && (
+                      <source src="/videos/Cinematic_AI_Globe_Generation.mp4" type="video/mp4" />
+                    )}
                     Your browser does not support the video tag.
                   </video>
                   {/* Enhanced overlay with vignette */}

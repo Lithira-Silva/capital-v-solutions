@@ -12,17 +12,17 @@ export const LoadingScreen = memo(function LoadingScreen({ onLoadingComplete }: 
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Simulate loading progress
+    // Optimized loading progress - completes in ~0.8 seconds
     const timer = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(timer);
-          setTimeout(() => onLoadingComplete(), 200);
+          setTimeout(() => onLoadingComplete(), 100);
           return 100;
         }
-        return prev + 4; // Faster increment for quicker loading
+        return prev + 8; // Much faster increment
       });
-    }, 20); // Reduced interval for faster updates
+    }, 15); // Faster interval
 
     return () => clearInterval(timer);
   }, [onLoadingComplete]);
@@ -44,7 +44,7 @@ export const LoadingScreen = memo(function LoadingScreen({ onLoadingComplete }: 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
           className="flex items-center gap-2 md:gap-3 flex-wrap justify-center"
         >
           <span className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#0F0F0F]">
@@ -56,10 +56,10 @@ export const LoadingScreen = memo(function LoadingScreen({ onLoadingComplete }: 
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ 
-              duration: 0.6, 
-              delay: 0.4,
+              duration: 0.4, 
+              delay: 0.2,
               type: "spring",
-              stiffness: 200
+              stiffness: 250
             }}
             className="relative"
           >
@@ -81,6 +81,7 @@ export const LoadingScreen = memo(function LoadingScreen({ onLoadingComplete }: 
                 alt="V"
                 width={56}
                 height={56}
+                priority
                 className="relative z-10 object-contain drop-shadow-[0_0_15px_rgba(212,175,55,0.3)]"
               />
             </motion.div>
@@ -95,7 +96,7 @@ export const LoadingScreen = memo(function LoadingScreen({ onLoadingComplete }: 
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
           className="w-full max-w-[16rem] sm:max-w-[18rem] md:max-w-[20rem] space-y-2"
         >
           <div className="h-1 bg-gray-200 rounded-full overflow-hidden backdrop-blur-xl">
