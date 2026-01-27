@@ -6,12 +6,12 @@ import { memo } from "react";
 
 // Logo data - You can replace these with actual logo URLs
 const logos = [
-  { name: "Azure", url: "https://cdn.worldvectorlogo.com/logos/azure-1.svg" },
-  { name: "Python", url: "https://cdn.worldvectorlogo.com/logos/python-5.svg" },
-  { name: "Power BI", url: "https://cdn.worldvectorlogo.com/logos/power-bi.svg" },
-  { name: "AWS", url: "https://cdn.worldvectorlogo.com/logos/aws-2.svg" },
+  { name: "Azure", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" },
+  { name: "Python", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+  { name: "Power BI", url: "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" },
+  { name: "AWS", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
   { name: "React", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-  { name: "Node.js", url: "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" },
+  { name: "Node.js", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
   { name: "PostgreSQL", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
 ];
 
@@ -89,18 +89,13 @@ export const TechStackMarquee = memo(function TechStackMarquee() {
                         alt={`${logo.name} logo`}
                         width={80}
                         height={80}
-                        className="object-contain grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-hover:logo-hover-glow transition-all duration-500 will-change-[filter,opacity]"
+                        className="object-contain grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
                         unoptimized={true}
-                        priority={index < 8}
-                        crossOrigin="anonymous"
+                        priority={index < 7}
                         onError={(e) => {
                           const target = e.currentTarget as HTMLImageElement;
-                          target.style.opacity = '0.4';
-                          target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIiBmaWxsPSIjOTk5Ij5Mb2dvPC90ZXh0Pjwvc3ZnPg==';
-                        }}
-                        onLoad={(e) => {
-                          const target = e.currentTarget as HTMLImageElement;
-                          target.style.opacity = '1';
+                          target.onerror = null;
+                          target.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' font-size='14' text-anchor='middle' dy='.3em' fill='%23999' font-family='Arial'%3E${logo.name}%3C/text%3E%3C/svg%3E`;
                         }}
                       />
                     </div>
