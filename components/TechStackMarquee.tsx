@@ -13,7 +13,6 @@ const logos = [
   { name: "React", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
   { name: "Node.js", url: "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" },
   { name: "PostgreSQL", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-  { name: "Docker", url: "https://cdn.worldvectorlogo.com/logos/docker.svg" },
 ];
 
 // Duplicate the logos for seamless infinite scroll
@@ -87,14 +86,21 @@ export const TechStackMarquee = memo(function TechStackMarquee() {
                     <div className="relative w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110 will-change-transform">
                       <Image
                         src={logo.url}
-                        alt={logo.name}
+                        alt={`${logo.name} logo`}
                         width={80}
                         height={80}
                         className="object-contain grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-hover:logo-hover-glow transition-all duration-500 will-change-[filter,opacity]"
-                        loading="lazy"
-                        unoptimized
+                        unoptimized={true}
+                        priority={index < 8}
+                        crossOrigin="anonymous"
                         onError={(e) => {
-                          e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIiBmaWxsPSIjOTk5Ij5Mb2dvPC90ZXh0Pjwvc3ZnPg==';
+                          const target = e.currentTarget as HTMLImageElement;
+                          target.style.opacity = '0.4';
+                          target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIiBmaWxsPSIjOTk5Ij5Mb2dvPC90ZXh0Pjwvc3ZnPg==';
+                        }}
+                        onLoad={(e) => {
+                          const target = e.currentTarget as HTMLImageElement;
+                          target.style.opacity = '1';
                         }}
                       />
                     </div>
